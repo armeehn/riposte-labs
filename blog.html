@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Riposte Laboratories Inc.</title>
+<meta name="description" content="Notes from the workshop at Riposte Laboratories: materials, methods, and building a local recycling loop from model-kit plastic and reclaimed lithium cells.">
+<style>
+:root{
+  --ink:#1d1a17;
+  --pink:#f0477d;
+  --orange:#fe9a0d;
+  --teal:#12b795;
+  --bone:#f6f1e7;
+  --bone-dim:#eae4d6;
+  --rule:2px solid var(--ink);
+  --mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--mono);background:var(--bone);color:var(--ink);line-height:1.6;font-size:15px}
+::selection{background:var(--pink);color:var(--bone)}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+/* ---------- top bar ---------- */
+header.topbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:stretch;justify-content:space-between;
+  background:var(--bone);border-bottom:var(--rule);
+  font-size:12px;letter-spacing:.08em;
+}
+.topbar .brand{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 16px;font-weight:700;text-transform:uppercase;
+  border-right:var(--rule);white-space:nowrap;text-decoration:none;
+}
+.topbar .brand .mark{width:110px;color:var(--ink)}
+
+/* ---------- grouped dropdown nav ---------- */
+.topbar nav.mainnav{display:flex;align-items:stretch}
+.navgroup{position:relative;display:flex;align-items:stretch;border-left:var(--rule)}
+.navtop{
+  font-family:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  background:none;border:none;color:inherit;cursor:pointer;
+  display:flex;align-items:center;gap:7px;padding:0 15px;white-space:nowrap;
+}
+.navtop .car{font-size:9px;opacity:.55;transition:transform .15s}
+.navgroup:hover>.navtop,.navgroup:focus-within>.navtop{background:var(--ink);color:var(--bone)}
+.navgroup:hover>.navtop .car,.navgroup:focus-within>.navtop .car{transform:rotate(180deg);opacity:1}
+.navlink{
+  display:flex;align-items:center;padding:0 15px;border-left:var(--rule);
+  text-decoration:none;text-transform:uppercase;font-size:12px;letter-spacing:.08em;
+  white-space:nowrap;transition:background .12s,color .12s;
+}
+.navlink:hover,.navlink[aria-current]{background:var(--teal);color:var(--bone)}
+.navmenu{
+  position:absolute;top:100%;right:-2px;min-width:212px;
+  display:none;flex-direction:column;
+  background:var(--bone);border:var(--rule);border-top:none;z-index:60;
+}
+.navgroup:hover .navmenu,.navgroup:focus-within .navmenu{display:flex}
+.navmenu a{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;text-decoration:none;text-transform:uppercase;
+  font-size:12px;letter-spacing:.05em;border-bottom:1px dashed var(--ink);white-space:nowrap;
+  transition:background .12s,color .12s;
+}
+.navmenu a:last-child{border-bottom:none}
+.navmenu a[aria-current]{background:var(--ink);color:var(--bone)}
+.navmenu a .ar{opacity:0;transform:translateX(-5px);transition:opacity .12s,transform .12s}
+.navmenu a:hover .ar{opacity:1;transform:translateX(0)}
+.navgroup:nth-of-type(3n+1) .navmenu a:hover{background:var(--pink);color:var(--bone)}
+.navgroup:nth-of-type(3n+2) .navmenu a:hover{background:var(--orange);color:var(--ink)}
+.navgroup:nth-of-type(3n) .navmenu a:hover{background:var(--teal);color:var(--bone)}
+@media(max-width:820px){
+  header.topbar{flex-wrap:wrap;position:static}
+  .topbar .brand{width:100%;border-right:none;border-bottom:var(--rule)}
+  .topbar nav.mainnav{width:100%;flex-direction:column}
+  .navgroup{width:100%;border-left:none;border-bottom:var(--rule);flex-wrap:wrap}
+  .navtop{width:100%;justify-content:space-between;padding:12px 16px;background:var(--bone-dim)}
+  .navtop .car,.navgroup:hover>.navtop .car,.navgroup:focus-within>.navtop .car{transform:none}
+  .navmenu{position:static;display:flex;width:100%;border:none;min-width:0}
+  .navmenu a{padding-left:30px}
+  .navlink{width:100%;border-left:none;border-bottom:var(--rule);padding:12px 16px;justify-content:space-between}
+}
+
+/* ---------- page head banner ---------- */
+.pagehead{
+  background:linear-gradient(105deg,
+    var(--pink) 0 36%, var(--orange) 36% 64%, var(--teal) 64% 100%);
+  border-bottom:var(--rule);padding:56px 0 48px;color:var(--ink);
+}
+.pagehead .inner{width:min(900px,92vw);margin:0 auto}
+.pagehead .kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.pagehead h1{font-size:clamp(30px,5vw,54px);text-transform:uppercase;letter-spacing:.02em;margin-top:8px}
+.pagehead p{max-width:62ch;margin-top:12px;font-size:14px}
+
+.checker{
+  height:26px;
+  background:repeating-conic-gradient(var(--ink) 0% 25%, var(--bone) 0% 50%) 0 0 / 22px 22px;
+  border-top:var(--rule);border-bottom:var(--rule);
+}
+
+/* ---------- index of posts ---------- */
+.wrap{width:min(900px,92vw);margin:0 auto;padding:44px 0 72px}
+.index{border:var(--rule);margin-bottom:52px}
+.index-h{
+  padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--ink);color:var(--bone);border-bottom:var(--rule);
+}
+.index a{
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  padding:14px;text-decoration:none;border-bottom:1px dashed var(--ink);
+  transition:background .12s;
+}
+.index a:last-child{border-bottom:none}
+.index a:hover{background:var(--bone-dim)}
+.index .date{font-size:11px;letter-spacing:.1em;opacity:.55;white-space:nowrap}
+.index .t{font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:15px}
+.index .chip{margin-left:auto}
+
+/* tag chips */
+.chip{
+  font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:3px 9px;border:2px solid var(--ink);white-space:nowrap;
+}
+.chip.plastics{background:var(--orange);color:var(--ink)}
+.chip.hex{background:var(--teal);color:var(--bone)}
+.chip.process{background:var(--pink);color:var(--bone)}
+
+/* ---------- posts ---------- */
+.post{padding:8px 0 44px;border-bottom:var(--rule);margin-bottom:44px;scroll-margin-top:90px}
+.post:last-child{border-bottom:none;margin-bottom:0}
+.post .meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.post .meta .date{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+.post h2{
+  font-size:clamp(22px,3.4vw,34px);text-transform:uppercase;letter-spacing:.02em;
+  line-height:1.15;margin-bottom:14px;
+}
+.post .lead{font-size:clamp(15px,1.8vw,18px);font-weight:700;max-width:64ch;margin-bottom:14px}
+.post p{max-width:66ch;margin-bottom:.9em}
+.post p:last-child{margin-bottom:0}
+.post .byline{margin-top:18px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;opacity:.55}
+.post a.inline{font-weight:700}
+.pull{
+  border-left:8px solid var(--pink);padding:6px 0 6px 16px;margin:18px 0;
+  font-weight:700;font-size:16px;max-width:60ch;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:var(--rule);display:grid;grid-template-columns:1fr 1fr;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+}
+footer>div{padding:18px 16px}
+footer .l{background:var(--ink);color:var(--bone)}
+footer .r{background:linear-gradient(105deg,
+    var(--pink) 0 36%, var(--orange) 36% 64%, var(--teal) 64% 100%);
+  color:var(--ink);font-weight:700;text-align:right}
+@media(max-width:560px){footer{grid-template-columns:1fr}footer .r{text-align:left}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <div class="mark"><img src="logo.svg" alt="Riposte Laboratories" width="110"></div>
+    <span>Laboratories&nbsp;Inc.</span>
+  </a>
+  <nav class="mainnav">
+    <div class="navgroup">
+      <button class="navtop" type="button">Company <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="index.html#mission">Mission <span class="ar">→</span></a>
+        <a href="index.html#esh">Meet Esh <span class="ar">→</span></a>
+        <a href="index.html#contact">Contact <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button">Projects <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="index.html#plastics">Plastic Works <span class="ar">→</span></a>
+        <a href="index.html#hex">Project HEX <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button">Process <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="process.html">Our Process <span class="ar">→</span></a>
+        <a href="recycling101.html">Recycling 101 <span class="ar">→</span></a>
+      </div>
+    </div>
+    <a class="navlink" href="blog.html" aria-current="page">Blog</a>
+  </nav>
+</header>
+
+<div class="pagehead">
+  <div class="inner">
+    <div class="kicker">Journal // DOC NO. RL-300-A</div>
+    <h1>Blog</h1>
+    <p>Notes from the workshop — on materials, methods, and the slow work of
+    building a local recycling loop out of model-kit plastic and reclaimed
+    lithium cells.</p>
+  </div>
+</div>
+<div class="checker"></div>
+
+<div class="wrap">
+
+  <!-- ============ INDEX ============ -->
+  <nav class="index" aria-label="Latest posts">
+    <div class="index-h">Latest // 3 entries</div>
+    <a href="#runners">
+      <span class="date">2026-06-28</span>
+      <span class="t">The cleanest plastic you've never heard of</span>
+      <span class="chip plastics">Plastics</span>
+    </a>
+    <a href="#vape-cells">
+      <span class="date">2026-06-12</span>
+      <span class="t">A battery goldmine inside disposable vapes</span>
+      <span class="chip hex">Project HEX</span>
+    </a>
+    <a href="#drop-off">
+      <span class="date">2026-05-30</span>
+      <span class="t">Meeting the material where it lands</span>
+      <span class="chip process">Process</span>
+    </a>
+  </nav>
+
+  <!-- ============ POST 1 ============ -->
+  <article class="post" id="runners">
+    <div class="meta">
+      <span class="date">2026-06-28</span>
+      <span class="chip plastics">Plastics</span>
+    </div>
+    <h2>The cleanest plastic you've never heard of</h2>
+    <p class="lead">Every finished model kit leaves behind a plastic skeleton.
+    It turns out to be some of the best recycling feedstock we can get our hands
+    on.</p>
+    <p>If you have ever built a Gunpla kit, you know the ritual: clip each part
+    from the frame, and set the empty frame aside. That frame — the runner, with
+    its sprues — is pure, moulded polystyrene, sometimes ABS. It has never held
+    food. It has never been outdoors. It was manufactured to a tight spec and it
+    is already sorted by colour on the frame.</p>
+    <p>Compare that to a curbside plastic bin, where mixed resins, food residue,
+    and film all arrive tangled together. Sorting and cleaning that mess is most
+    of what makes recycling expensive and unreliable. Model-kit runners skip the
+    hardest steps entirely.</p>
+    <div class="pull">Clean, uniform, single-resin, pre-sorted — a recycler's
+    idea of a perfect input.</div>
+    <p>The catch is volume: no single builder produces much. That is exactly why
+    we collect through hobby stores. A shop concentrates the output of hundreds
+    of builders into one bin, and many of them already hoard their runners out of
+    a vague sense that the plastic is too nice to bin. It is. We shred it, sort by
+    colour, dry it, and feed it straight into injection molding.</p>
+    <p class="byline">— Filed under Plastic Works · see <a class="inline" href="process.html">Our Process</a></p>
+  </article>
+
+  <!-- ============ POST 2 ============ -->
+  <article class="post" id="vape-cells">
+    <div class="meta">
+      <span class="date">2026-06-12</span>
+      <span class="chip hex">Project HEX</span>
+    </div>
+    <h2>A battery goldmine inside disposable vapes</h2>
+    <p class="lead">Most disposable vapes are thrown away with a perfectly good
+    lithium cell still inside. Multiply that by how many are sold, and the waste
+    is staggering.</p>
+    <p>A disposable vape is, functionally, a lithium cell wrapped in plastic and
+    marketed as trash. The cell is often rated for hundreds of charge cycles; the
+    device is designed to be used until the liquid runs out — typically a handful
+    of days — and then discarded. The battery inside is usually still healthy.</p>
+    <p>Thrown in the bin, that cell becomes a hazard: crushed in a truck or a
+    sorting facility, lithium cells start fires. Recovered properly, it becomes a
+    resource. Project HEX exists to do the second thing.</p>
+    <p>We collect spent disposables through vape retailers, pull the cells, and
+    test and grade each one. Cells that pass go into our hexagonal power units —
+    solar-topped, USB-C, magnetically tiling into larger arrays. Cells that fail
+    are routed to proper battery recycling. Nothing goes back in the bin.</p>
+    <p class="byline">— Filed under Project HEX · learn how we collect on
+    <a class="inline" href="process.html">Our Process</a></p>
+  </article>
+
+  <!-- ============ POST 3 ============ -->
+  <article class="post" id="drop-off">
+    <div class="meta">
+      <span class="date">2026-05-30</span>
+      <span class="chip process">Process</span>
+    </div>
+    <h2>Meeting the material where it lands</h2>
+    <p class="lead">The hardest part of recycling is not processing the material.
+    It is collecting it cleanly in the first place.</p>
+    <p>Ask people to sort, store, and transport their own waste to a facility and
+    most of it never arrives — or arrives contaminated. So we inverted the
+    problem. Instead of building a destination, we partner with the businesses
+    the material already passes through and put a bin right there.</p>
+    <p>A hobby store's customers generate runners. A repair shop accumulates
+    pulled cells. A vape retailer collects spent disposables. An electronics
+    retailer like Best Buy already runs take-back. In every case the material
+    returns to roughly where it was sold — so collection is convenient, local,
+    and pre-sorted by the nature of the partner.</p>
+    <p>It keeps our loop short and our feedstock clean, and it gives each partner
+    a visible way to stand behind what they sell. If you run a business that fits
+    one of these streams, <a class="inline" href="index.html#contact">we would
+    like to hear from you</a>.</p>
+    <p class="byline">— Filed under Process · full detail on
+    <a class="inline" href="process.html">Our Process</a></p>
+  </article>
+
+</div>
+
+<footer>
+  <div class="l">© 2026 Riposte Laboratories Inc. — all rights reserved.</div>
+  <div class="r">parry ♻ riposte ♻ recycle ♻ repeat</div>
+</footer>
+
+</body>
+</html>

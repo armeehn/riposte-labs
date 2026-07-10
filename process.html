@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Process — Riposte Laboratories Inc.</title>
+<meta name="description" content="How Riposte Laboratories collects material: a local drop-off partner network. Model-kit runners and sprues from hobby stores; lithium cells from repair shops, vape retailers, and electronics stores.">
+<style>
+:root{
+  --ink:#1d1a17;
+  --pink:#f0477d;
+  --orange:#fe9a0d;
+  --teal:#12b795;
+  --bone:#f6f1e7;
+  --bone-dim:#eae4d6;
+  --rule:2px solid var(--ink);
+  --mono:"JetBrains Mono","IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--mono);background:var(--bone);color:var(--ink);line-height:1.55;font-size:15px}
+::selection{background:var(--pink);color:var(--bone)}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+
+/* ---------- top bar ---------- */
+header.topbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:stretch;justify-content:space-between;
+  background:var(--bone);border-bottom:var(--rule);
+  font-size:12px;letter-spacing:.08em;
+}
+.topbar .brand{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 16px;font-weight:700;text-transform:uppercase;
+  border-right:var(--rule);white-space:nowrap;text-decoration:none;
+}
+.topbar .brand .mark{width:110px;color:var(--ink)}
+
+/* ---------- grouped dropdown nav ---------- */
+.topbar nav.mainnav{display:flex;align-items:stretch}
+.navgroup{position:relative;display:flex;align-items:stretch;border-left:var(--rule)}
+.navtop{
+  font-family:inherit;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  background:none;border:none;color:inherit;cursor:pointer;
+  display:flex;align-items:center;gap:7px;padding:0 15px;white-space:nowrap;
+}
+.navtop .car{font-size:9px;opacity:.55;transition:transform .15s}
+.navgroup:hover>.navtop,.navgroup:focus-within>.navtop{background:var(--ink);color:var(--bone)}
+.navgroup:hover>.navtop .car,.navgroup:focus-within>.navtop .car{transform:rotate(180deg);opacity:1}
+.navlink{
+  display:flex;align-items:center;padding:0 15px;border-left:var(--rule);
+  text-decoration:none;text-transform:uppercase;font-size:12px;letter-spacing:.08em;
+  white-space:nowrap;transition:background .12s,color .12s;
+}
+.navlink:hover,.navlink[aria-current]{background:var(--teal);color:var(--bone)}
+.navmenu{
+  position:absolute;top:100%;right:-2px;min-width:212px;
+  display:none;flex-direction:column;
+  background:var(--bone);border:var(--rule);border-top:none;z-index:60;
+}
+.navgroup:hover .navmenu,.navgroup:focus-within .navmenu{display:flex}
+.navmenu a{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 14px;text-decoration:none;text-transform:uppercase;
+  font-size:12px;letter-spacing:.05em;border-bottom:1px dashed var(--ink);white-space:nowrap;
+  transition:background .12s,color .12s;
+}
+.navmenu a:last-child{border-bottom:none}
+.navmenu a[aria-current]{background:var(--ink);color:var(--bone)}
+.navmenu a .ar{opacity:0;transform:translateX(-5px);transition:opacity .12s,transform .12s}
+.navmenu a:hover .ar{opacity:1;transform:translateX(0)}
+.navgroup:nth-of-type(3n+1) .navmenu a:hover{background:var(--pink);color:var(--bone)}
+.navgroup:nth-of-type(3n+2) .navmenu a:hover{background:var(--orange);color:var(--ink)}
+.navgroup:nth-of-type(3n) .navmenu a:hover{background:var(--teal);color:var(--bone)}
+@media(max-width:820px){
+  header.topbar{flex-wrap:wrap;position:static}
+  .topbar .brand{width:100%;border-right:none;border-bottom:var(--rule)}
+  .topbar nav.mainnav{width:100%;flex-direction:column}
+  .navgroup{width:100%;border-left:none;border-bottom:var(--rule);flex-wrap:wrap}
+  .navtop{width:100%;justify-content:space-between;padding:12px 16px;background:var(--bone-dim)}
+  .navtop .car,.navgroup:hover>.navtop .car,.navgroup:focus-within>.navtop .car{transform:none}
+  .navmenu{position:static;display:flex;width:100%;border:none;min-width:0}
+  .navmenu a{padding-left:30px}
+  .navlink{width:100%;border-left:none;border-bottom:var(--rule);padding:12px 16px;justify-content:space-between}
+}
+
+/* ---------- page head banner ---------- */
+.pagehead{
+  background:linear-gradient(105deg,
+    var(--pink) 0 36%, var(--orange) 36% 64%, var(--teal) 64% 100%);
+  border-bottom:var(--rule);padding:56px 0 48px;color:var(--ink);
+}
+.pagehead .inner{width:min(1060px,92vw);margin:0 auto}
+.pagehead .kicker{font-size:11px;letter-spacing:.3em;text-transform:uppercase}
+.pagehead h1{font-size:clamp(30px,5vw,54px);text-transform:uppercase;letter-spacing:.02em;margin-top:8px}
+.pagehead p{max-width:64ch;margin-top:12px;font-size:14px}
+
+/* ---------- separators ---------- */
+.checker{
+  height:26px;
+  background:repeating-conic-gradient(var(--ink) 0% 25%, var(--bone) 0% 50%) 0 0 / 22px 22px;
+  border-top:var(--rule);border-bottom:var(--rule);
+}
+.checker.teal{background:repeating-conic-gradient(var(--teal) 0% 25%, var(--bone) 0% 50%) 0 0 / 22px 22px}
+.harlequin{
+  height:38px;
+  background:repeating-conic-gradient(from 45deg, var(--pink) 0% 25%, var(--teal) 0% 50%) 0 0 / 34px 34px;
+  border-top:var(--rule);border-bottom:var(--rule);
+}
+
+/* ---------- sections ---------- */
+section.sec{width:min(1060px,92vw);margin:0 auto;padding:64px 0}
+.sechead{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  border-bottom:var(--rule);padding-bottom:14px;margin-bottom:30px;
+}
+.sechead .no{font-size:12px;font-weight:700;letter-spacing:.1em;background:var(--ink);color:var(--bone);padding:4px 10px}
+.sechead.pinkno .no{background:var(--pink)}
+.sechead.orangeno .no{background:var(--orange);color:var(--ink)}
+.sechead.tealno .no{background:var(--teal)}
+.sechead h2{font-size:clamp(22px,3vw,36px);text-transform:uppercase;letter-spacing:.03em}
+.sechead .tag{margin-left:auto;font-size:11px;letter-spacing:.14em;opacity:.6;text-transform:uppercase}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+p.lead{font-size:clamp(16px,2vw,19px);max-width:56ch;font-weight:700}
+p{max-width:66ch}
+p + p{margin-top:.9em}
+.dim{opacity:.65}
+.hi{color:var(--pink);font-weight:700}
+
+.spec{border:var(--rule)}
+.spec .spec-h{
+  padding:8px 12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  border-bottom:var(--rule);background:var(--bone-dim);
+  display:flex;justify-content:space-between;gap:8px;
+}
+.spec .spec-b{padding:16px 14px;font-size:14px}
+.spec ul{list-style:none}
+.spec li{padding:7px 0;border-bottom:1px dashed var(--ink)}
+.spec li:last-child{border-bottom:none}
+.spec li::before{content:"▸ ";color:var(--pink);font-weight:700}
+.spec.orangehead .spec-h{background:var(--orange);color:var(--ink)}
+.spec.tealhead .spec-h{background:var(--teal);color:var(--bone)}
+
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;margin-top:32px;flex-wrap:wrap}
+.flow .step{
+  flex:1 1 150px;border:var(--rule);padding:16px 12px;text-align:center;
+  font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--bone);position:relative;margin-right:26px;
+}
+.flow .step:last-child{margin-right:0}
+.flow .step::after{
+  content:"→";position:absolute;right:-24px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:700;color:var(--pink);
+}
+.flow .step:nth-child(1){border-top:6px solid var(--pink)}
+.flow .step:nth-child(2){border-top:6px solid var(--orange)}
+.flow .step:nth-child(3){border-top:6px solid var(--teal)}
+.flow .step:nth-child(4){border-top:6px solid var(--ink)}
+.flow .step:last-child::after{content:none}
+.flow .step b{display:block;font-size:22px;margin-bottom:6px}
+@media(max-width:640px){
+  .flow{gap:22px}
+  .flow .step{flex:1 1 100%;margin-right:0}
+  .flow .step::after{content:"↓";right:50%;top:auto;bottom:-22px;transform:translateX(50%)}
+}
+
+/* partner cards */
+.partners{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:8px}
+.partner{border:var(--rule);padding:16px;background:var(--bone)}
+.partner .p-n{font-size:11px;font-weight:700;letter-spacing:.16em;opacity:.5}
+.partner:nth-child(4n+1){border-top:6px solid var(--pink)}
+.partner:nth-child(4n+2){border-top:6px solid var(--orange)}
+.partner:nth-child(4n+3){border-top:6px solid var(--teal)}
+.partner:nth-child(4n){border-top:6px solid var(--ink)}
+.partner b{display:block;text-transform:uppercase;letter-spacing:.05em;font-size:14px;margin:6px 0 8px}
+.partner p{font-size:13px}
+.partner .drops{margin-top:10px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
+
+.note{
+  margin-top:26px;border:var(--rule);border-left:8px solid var(--orange);
+  padding:14px 16px;font-size:14px;background:var(--bone-dim);max-width:none;
+}
+.note b{text-transform:uppercase;letter-spacing:.08em;font-size:11px;display:block;margin-bottom:4px}
+.note a{font-weight:700}
+.stamp{
+  display:inline-block;margin-top:18px;padding:6px 12px;
+  border:2px solid var(--orange);color:var(--orange);
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transform:rotate(-2deg);
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:var(--rule);display:grid;grid-template-columns:1fr 1fr;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+}
+footer>div{padding:18px 16px}
+footer .l{background:var(--ink);color:var(--bone)}
+footer .r{background:linear-gradient(105deg,
+    var(--pink) 0 36%, var(--orange) 36% 64%, var(--teal) 64% 100%);
+  color:var(--ink);font-weight:700;text-align:right}
+@media(max-width:560px){footer{grid-template-columns:1fr}footer .r{text-align:left}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <div class="mark"><img src="logo.svg" alt="Riposte Laboratories" width="110"></div>
+    <span>Laboratories&nbsp;Inc.</span>
+  </a>
+  <nav class="mainnav">
+    <div class="navgroup">
+      <button class="navtop" type="button">Company <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="index.html#mission">Mission <span class="ar">→</span></a>
+        <a href="index.html#esh">Meet Esh <span class="ar">→</span></a>
+        <a href="index.html#contact">Contact <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button">Projects <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="index.html#plastics">Plastic Works <span class="ar">→</span></a>
+        <a href="index.html#hex">Project HEX <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="navgroup">
+      <button class="navtop" type="button">Process <span class="car">▾</span></button>
+      <div class="navmenu">
+        <a href="process.html" aria-current="page">Our Process <span class="ar">→</span></a>
+        <a href="recycling101.html">Recycling 101 <span class="ar">→</span></a>
+      </div>
+    </div>
+    <a class="navlink" href="blog.html">Blog</a>
+  </nav>
+</header>
+
+<div class="pagehead">
+  <div class="inner">
+    <div class="kicker">Operations // DOC NO. RL-200-A</div>
+    <h1>Our Process</h1>
+    <p>We do not ask people to find us. We meet material where it already ends up —
+    at the businesses it came from. Our collection runs on a network of local
+    drop-off partners, each hosting a bin for the specific waste stream their
+    customers generate.</p>
+  </div>
+</div>
+<div class="checker"></div>
+
+<!-- ============ SEC 01 — THE MODEL ============ -->
+<section class="sec">
+  <div class="sechead pinkno">
+    <span class="no">SEC.01</span>
+    <h2>The Drop-off Model</h2>
+    <span class="tag">// collect at the point of sale</span>
+  </div>
+  <div class="cols">
+    <div class="spec">
+      <div class="spec-h"><span>SPEC / COLLECTION MODEL</span><span>RL-200</span></div>
+      <div class="spec-b">
+        <ul>
+          <li>Model: hosted drop-off bins at partner businesses</li>
+          <li>Origin: material returns to its own point of sale</li>
+          <li>Radius: local. Collected here, processed here, used here</li>
+          <li>Sorting: streams kept separate at intake</li>
+          <li>Partner cost: none — we supply and service the bins</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p class="lead">We partner with local businesses as drop-off points for the
+      recyclable materials that were originally part of a purchase they made.</p>
+      <p>The material a business sells often comes back through its own door as
+      waste — an offcut, a spent cell, an end-of-life device. Rather than build a
+      separate collection system, we place a bin at that natural return point and
+      <span class="hi">close the loop where it starts</span>.</p>
+      <p>For the customer, dropping off is as convenient as the original purchase.
+      For the partner, it is a visible commitment to keeping material out of
+      landfill. For us, it means a clean, predictable, pre-sorted supply.</p>
+    </div>
+  </div>
+
+  <div class="flow" aria-label="collection process">
+    <div class="step"><b>01</b>Partner<br><span class="dim">(host a bin)</span></div>
+    <div class="step"><b>02</b>Collect<br><span class="dim">(customers return material)</span></div>
+    <div class="step"><b>03</b>Riposte<br><span class="dim">(sort + re-engineer)</span></div>
+    <div class="step"><b>04</b>Return<br><span class="dim">(finished product)</span></div>
+  </div>
+</section>
+
+<div class="harlequin"></div>
+
+<!-- ============ SEC 02 — PLASTIC STREAM ============ -->
+<section class="sec">
+  <div class="sechead orangeno">
+    <span class="no">SEC.02</span>
+    <h2>Plastic Stream</h2>
+    <span class="tag">// runners &amp; sprues from hobby stores</span>
+  </div>
+  <div class="cols">
+    <div class="spec orangehead">
+      <div class="spec-h"><span>SPEC / PLASTIC INTAKE</span><span>RL-P02</span></div>
+      <div class="spec-b">
+        <ul>
+          <li>Source: hobby, model-kit, and game stores</li>
+          <li>Material: runners &amp; sprues — polystyrene / ABS</li>
+          <li>Condition: clean, dry, uncontaminated by design</li>
+          <li>Sorting: separated by colour where possible</li>
+          <li>Destination: shred → sort → dry → injection mold</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p class="lead">Our plastic feedstock comes from scale-model kits: the runners
+      and sprues left over once the parts are clipped out.</p>
+      <p>Every model kit — Gunpla and its relatives — arrives as parts held on a
+      plastic lattice. Once a build is finished, that lattice is discarded. It is
+      one of the cleanest waste streams available: uniform, high-grade polystyrene
+      and ABS, moulded to a known spec, sorted by frame, and free of any food or
+      liquid contamination.</p>
+      <p>Hobby and model stores are the ideal partner. Their customers generate a
+      steady supply of this exact offcut, and many builders already save their
+      runners rather than bin them. We place a collection bin in the shop; the
+      material flows straight into our injection-molding loop.</p>
+    </div>
+  </div>
+</section>
+
+<div class="checker teal"></div>
+
+<!-- ============ SEC 03 — BATTERY STREAM ============ -->
+<section class="sec">
+  <div class="sechead tealno">
+    <span class="no">SEC.03</span>
+    <h2>Battery Stream</h2>
+    <span class="tag">// cells from repair, vape &amp; retail</span>
+  </div>
+  <div class="cols">
+    <div class="spec tealhead">
+      <div class="spec-h"><span>SPEC / CELL INTAKE</span><span>RL-H02</span></div>
+      <div class="spec-b">
+        <ul>
+          <li>Sources: phone / IT repair shops</li>
+          <li>Sources: e-cigarette &amp; vape retailers</li>
+          <li>Sources: electronics retailers (e.g. Best Buy)</li>
+          <li>Material: lithium cells from phones, disposables, devices</li>
+          <li>Handling: terminals taped, stored in fire-safe containers</li>
+          <li>Destination: Project HEX reclamation + rebuild</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p class="lead">Lithium cells accumulate wherever devices are sold or
+      serviced. We partner with those businesses to intercept them.</p>
+      <p>End-of-life cells are hazardous in a curbside bin but valuable in the
+      right hands. We collect them through the businesses that handle them every
+      day and route them into <span class="hi">Project HEX</span> for testing,
+      grading, and rebuilding into modular power units.</p>
+      <p>Three partner types supply this stream:</p>
+      <p><b>Phone &amp; IT repair shops</b> — cells pulled during battery
+      replacements and board repairs, otherwise stockpiled or discarded.<br>
+      <b>E-cigarette &amp; vape retailers</b> — spent disposables and modules,
+      each holding a lithium cell usually thrown away with life still in it.<br>
+      <b>Electronics retailers</b> — large stores such as Best Buy that already
+      run take-back programs and gather cells at volume.</p>
+      <span class="stamp">All cells stored terminals-taped, fire-safe</span>
+    </div>
+  </div>
+</section>
+
+<div class="harlequin"></div>
+
+<!-- ============ SEC 04 — PARTNER NETWORK ============ -->
+<section class="sec">
+  <div class="sechead pinkno">
+    <span class="no">SEC.04</span>
+    <h2>Partner Network</h2>
+    <span class="tag">// who hosts a bin</span>
+  </div>
+  <p class="lead">Each partner hosts the stream their customers already produce.</p>
+  <div class="partners">
+    <div class="partner">
+      <span class="p-n">TYPE 01</span>
+      <b>Hobby &amp; Model Stores</b>
+      <p>Model-kit and game shops whose customers finish builds and set aside the
+      leftover lattice.</p>
+      <div class="drops">Drops: runners &amp; sprues</div>
+    </div>
+    <div class="partner">
+      <span class="p-n">TYPE 02</span>
+      <b>Phone &amp; IT Repair</b>
+      <p>Repair benches that swap failing batteries and accumulate pulled cells
+      with no clean route out.</p>
+      <div class="drops">Drops: lithium cells</div>
+    </div>
+    <div class="partner">
+      <span class="p-n">TYPE 03</span>
+      <b>Vape Retailers</b>
+      <p>E-cigarette shops collecting spent disposables — a sealed lithium cell in
+      every unit.</p>
+      <div class="drops">Drops: disposable cells</div>
+    </div>
+    <div class="partner">
+      <span class="p-n">TYPE 04</span>
+      <b>Electronics Retailers</b>
+      <p>Larger stores such as Best Buy with established take-back programs and
+      cells gathered at volume.</p>
+      <div class="drops">Drops: mixed device cells</div>
+    </div>
+  </div>
+  <div class="note"><b>Become a drop-off partner</b>
+  Run a shop that generates one of these streams? Hosting a bin costs nothing and
+  keeps your customers' material in a local loop.
+  <a href="index.html#contact">Get in touch</a> to set one up.</div>
+</section>
+
+<div class="checker"></div>
+
+<footer>
+  <div class="l">© 2026 Riposte Laboratories Inc. — all rights reserved.</div>
+  <div class="r">parry ♻ riposte ♻ recycle ♻ repeat</div>
+</footer>
+
+</body>
+</html>
