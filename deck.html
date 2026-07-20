@@ -168,9 +168,9 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <div class="kicker"><span class="chip pink">SEC.01</span> The problem <span class="tag">// value thrown away intact</span></div>
     <h1>We throw away material with <span class="hl">most of its life left.</span></h1>
     <div class="cols3">
-      <div class="stat"><div class="n pink">Plastic</div><div class="l">Clean, single-resin model-kit runners &amp; sprues landfilled by the tonne — a premium feedstock treated as trash.</div></div>
-      <div class="stat"><div class="n orange">Batteries</div><div class="l">Disposable vapes &amp; devices binned with fully charged lithium cells still inside.</div></div>
-      <div class="stat"><div class="n teal">Electronics</div><div class="l">Repair shops &amp; retailers accumulate usable cells with no local path back into use.</div></div>
+      <div class="stat"><div class="n pink">6.5%</div><div class="l">Of the 5,152 kt of plastic Canada discards each year, only ~6.5% is reprocessed into new material; the rest is buried or burned. <span class="dim">StatCan, 2022</span></div></div>
+      <div class="stat"><div class="n orange">$0 in BC</div><div class="l">No BC program buys post-industrial PS or ABS — the resins in every model kit. The nearest paying buyers sit ~4,000 km east, in Ontario.</div></div>
+      <div class="stat"><div class="n teal">Oct 2027</div><div class="l">BC's producer-funded vape take-back is legislated but unbuilt; no processor is named yet, even in Quebec's live program.</div></div>
     </div>
     <p class="big">The waste stream is not a disposal problem. It is <span class="hi">mispriced inventory</span> — sorted, concentrated, and delivered to a predictable set of doors every day.</p>
   </section>
@@ -195,12 +195,12 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <div class="cols">
       <div>
         <p class="big">We host drop-off bins at the businesses whose products become the waste — the material returns through its own front door, pre-sorted and clean.</p>
-        <p>Zero collection fleet. Zero partner cost. A steady, concentrated feedstock that most competitors have to pay to acquire.</p>
+        <p>Post-industrial resin like this is cleaner and more homogeneous than curbside plastic, so it commands a premium; ours arrives free, because no BC buyer competes for PS or ABS today.</p>
       </div>
       <div class="spec">
         <div class="spec-h"><span>PARTNER NETWORK</span><span>RL-200</span></div>
         <ul>
-          <li><b>Hobby &amp; model stores</b> — gunpla runners &amp; sprues</li>
+          <li><b>Hobby &amp; model stores</b> — gunpla runners; single-resin PS/ABS</li>
           <li><b>Phone / IT repair</b> — cells pulled during service</li>
           <li><b>Vape &amp; e-cig retailers</b> — spent disposables</li>
           <li><b>Electronics retail</b> — take-back volume (e.g. Best Buy)</li>
@@ -215,7 +215,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <div class="kicker"><span class="chip teal">SEC.04</span> Product lines <span class="tag">// two streams, one loop</span></div>
     <h1>Two feedstocks. Two <span class="hl">product lines.</span></h1>
     <div class="cols">
-      <div class="stat"><div class="n orange">Plastic Works</div><div class="l" style="text-transform:none;font-size:14px;line-height:1.6">Model-kit runners shredded, sorted, and injection-molded into durable repurposed goods — remade locally, sold locally.</div></div>
+      <div class="stat"><div class="n orange">Plastic Works</div><div class="l" style="text-transform:none;font-size:14px;line-height:1.6">Model-kit PS/ABS runners shredded, sorted, and injection-molded into durable goods — the resins BC has no buyer for, remade locally and sold locally.</div></div>
       <div class="stat"><div class="n teal">Project HEX</div><div class="l" style="text-transform:none;font-size:14px;line-height:1.6">Reclaimed lithium cells tested, graded, and rebuilt into modular hexagonal power tiles — the flagship product.</div></div>
     </div>
     <p class="illus">Plastic Works funds near-term revenue and the collection network; Project HEX is the venture-scale opportunity.</p>
@@ -285,23 +285,41 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <h1>Hexagons tessellate. So we <span class="hl">clad the whole home.</span></h1>
     <div class="cols">
       <div style="display:grid;place-items:center">
-        <svg viewBox="0 0 400 240" fill="none" style="width:min(440px,88vw)" aria-label="geodesic dome clad in hexagonal HEX tiles">
+        <svg viewBox="0 0 400 240" fill="none" style="width:min(440px,88vw)" aria-label="geodesic dome clad in tessellating hexagonal HEX tiles">
+          <defs><clipPath id="domeclip"><path d="M80,192 A120,120 0 0 1 320,192 Z"/></clipPath></defs>
           <g stroke="#fe9a0d" stroke-width="2"><circle cx="352" cy="40" r="12" fill="#fe9a0d" stroke="none"/>
             <line x1="352" y1="16" x2="352" y2="8"/><line x1="330" y1="40" x2="322" y2="40"/><line x1="336" y1="24" x2="330" y2="18"/><line x1="368" y1="24" x2="374" y2="18"/></g>
           <line x1="40" y1="192" x2="360" y2="192" stroke="#1d1a17" stroke-width="2.5"/>
-          <path d="M80,192 A120,120 0 0 1 320,192" fill="#f6f1e7" stroke="#1d1a17" stroke-width="2.5"/>
-          <g stroke="#1d1a17" stroke-width="1" opacity=".4">
-            <line x1="200" y1="72" x2="120" y2="192"/><line x1="200" y1="72" x2="160" y2="192"/><line x1="200" y1="72" x2="200" y2="192"/><line x1="200" y1="72" x2="240" y2="192"/><line x1="200" y1="72" x2="280" y2="192"/>
-            <line x1="96" y1="132" x2="304" y2="132"/><line x1="140" y1="88" x2="260" y2="88"/>
+          <path d="M80,192 A120,120 0 0 1 320,192 Z" fill="#f6f1e7"/>
+          <g clip-path="url(#domeclip)" stroke="#1d1a17" stroke-width="1.4">
+            <polygon points="112.5,163.1 104.0,177.8 87.0,177.8 78.5,163.1 87.0,148.3 104.0,148.3" fill="none"/>
+            <polygon points="138.0,118.9 129.5,133.6 112.5,133.6 104.0,118.9 112.5,104.2 129.5,104.2" fill="none"/>
+            <polygon points="138.0,148.3 129.5,163.1 112.5,163.1 104.0,148.3 112.5,133.6 129.5,133.6" fill="none"/>
+            <polygon points="138.0,177.8 129.5,192.5 112.5,192.5 104.0,177.8 112.5,163.1 129.5,163.1" fill="none"/>
+            <polygon points="163.5,104.2 155.0,118.9 138.0,118.9 129.5,104.2 138.0,89.4 155.0,89.4" fill="none"/>
+            <polygon points="163.5,133.6 155.0,148.3 138.0,148.3 129.5,133.6 138.0,118.9 155.0,118.9" fill="none"/>
+            <polygon points="163.5,163.1 155.0,177.8 138.0,177.8 129.5,163.1 138.0,148.3 155.0,148.3" fill="none"/>
+            <polygon points="189.0,89.4 180.5,104.2 163.5,104.2 155.0,89.4 163.5,74.7 180.5,74.7" fill="none"/>
+            <polygon points="189.0,118.9 180.5,133.6 163.5,133.6 155.0,118.9 163.5,104.2 180.5,104.2" fill="none"/>
+            <polygon points="189.0,148.3 180.5,163.1 163.5,163.1 155.0,148.3 163.5,133.6 180.5,133.6" fill="#12b795"/>
+            <polygon points="189.0,177.8 180.5,192.5 163.5,192.5 155.0,177.8 163.5,163.1 180.5,163.1" fill="none"/>
+            <polygon points="214.5,104.2 206.0,118.9 189.0,118.9 180.5,104.2 189.0,89.4 206.0,89.4" fill="#fe9a0d"/>
+            <polygon points="214.5,133.6 206.0,148.3 189.0,148.3 180.5,133.6 189.0,118.9 206.0,118.9" fill="none"/>
+            <polygon points="214.5,163.1 206.0,177.8 189.0,177.8 180.5,163.1 189.0,148.3 206.0,148.3" fill="#12b795"/>
+            <polygon points="240.0,89.4 231.5,104.2 214.5,104.2 206.0,89.4 214.5,74.7 231.5,74.7" fill="none"/>
+            <polygon points="240.0,118.9 231.5,133.6 214.5,133.6 206.0,118.9 214.5,104.2 231.5,104.2" fill="none"/>
+            <polygon points="240.0,148.3 231.5,163.1 214.5,163.1 206.0,148.3 214.5,133.6 231.5,133.6" fill="none"/>
+            <polygon points="240.0,177.8 231.5,192.5 214.5,192.5 206.0,177.8 214.5,163.1 231.5,163.1" fill="none"/>
+            <polygon points="265.5,104.2 257.0,118.9 240.0,118.9 231.5,104.2 240.0,89.4 257.0,89.4" fill="none"/>
+            <polygon points="265.5,133.6 257.0,148.3 240.0,148.3 231.5,133.6 240.0,118.9 257.0,118.9" fill="none"/>
+            <polygon points="265.5,163.1 257.0,177.8 240.0,177.8 231.5,163.1 240.0,148.3 257.0,148.3" fill="#f0477d"/>
+            <polygon points="291.0,118.9 282.5,133.6 265.5,133.6 257.0,118.9 265.5,104.2 282.5,104.2" fill="none"/>
+            <polygon points="291.0,148.3 282.5,163.1 265.5,163.1 257.0,148.3 265.5,133.6 282.5,133.6" fill="none"/>
+            <polygon points="291.0,177.8 282.5,192.5 265.5,192.5 257.0,177.8 265.5,163.1 282.5,163.1" fill="none"/>
+            <polygon points="316.5,133.6 308.0,148.3 291.0,148.3 282.5,133.6 291.0,118.9 308.0,118.9" fill="none"/>
+            <polygon points="316.5,163.1 308.0,177.8 291.0,177.8 282.5,163.1 291.0,148.3 308.0,148.3" fill="none"/>
           </g>
-          <g stroke="#1d1a17" stroke-width="1.6">
-            <polygon points="176,150 168,136.1 152,136.1 144,150 152,163.9 168,163.9" fill="#12b795"/>
-            <polygon points="216,116 208,102.1 192,102.1 184,116 192,129.9 208,129.9" fill="#fe9a0d"/>
-            <polygon points="256,150 248,136.1 232,136.1 224,150 232,163.9 248,163.9" fill="#f0477d"/>
-            <polygon points="216,150 208,136.1 192,136.1 184,150 192,163.9 208,163.9" fill="none"/>
-            <polygon points="200,180 192,166.1 176,166.1 168,180 176,193.9 192,193.9" fill="none"/>
-            <polygon points="232,180 224,166.1 208,166.1 200,180 208,193.9 224,193.9" fill="none"/>
-          </g>
+          <path d="M80,192 A120,120 0 0 1 320,192" fill="none" stroke="#1d1a17" stroke-width="2.5"/>
           <text x="200" y="222" fill="#1d1a17" font-size="11" text-anchor="middle" font-family="monospace" font-weight="700">GEODESIC ENERGY SKIN</text>
         </svg>
       </div>
@@ -317,14 +335,14 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <div class="kicker"><span class="chip pink">SEC.07</span> Why now <span class="tag">// the tailwinds line up</span></div>
     <h1>The moment for <span class="hl">reclaimed, distributed power.</span></h1>
     <div class="pills">
-      <span class="pill">Second-life battery economics improving</span>
-      <span class="pill">Distributed solar + storage demand surging</span>
-      <span class="pill">Right-to-repair &amp; take-back regulation</span>
-      <span class="pill">Circular-economy procurement mandates</span>
-      <span class="pill">Vape / e-waste volume at record highs</span>
-      <span class="pill">Maker &amp; hobby culture at scale</span>
+      <span class="pill">BC vape EPR legislated for Oct 2027; plans due Dec 2026</span>
+      <span class="pill">Clean post-industrial resin worth multiples of curbside bales</span>
+      <span class="pill">Virgin ABS ~US$2,000/t; PS ~US$1,350/t</span>
+      <span class="pill">&gt;99% of BC's recycled plastic already stays in-province</span>
+      <span class="pill">448 waste-facility fires in 2025 ($2.5B); vapes a named driver</span>
+      <span class="pill">Commercial recycled-PS demand opening in the east</span>
     </div>
-    <p class="big">Raw feedstock is abundant and effectively free. Demand for local, modular energy is climbing. Riposte sits exactly where those two curves cross.</p>
+    <p class="big">Feedstock is abundant and free where no one else pays for it; regulation and buyers are arriving on a fixed clock. Riposte sits exactly where those curves cross.</p>
   </section>
 
   <!-- 09 MARKET -->
@@ -333,7 +351,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
     <h1>A large market, entered <span class="hl">one bin at a time.</span></h1>
     <div class="cols3">
       <div class="stat"><div class="n teal">$[TAM]</div><div class="l">Total — distributed energy storage &amp; recycled-material goods</div></div>
-      <div class="stat"><div class="n pink">$[SAM]</div><div class="l">Serviceable — modular home power + reclaimed consumer goods in region</div></div>
+      <div class="stat"><div class="n pink">$[SAM]</div><div class="l">Serviceable — modular home power + reclaimed goods in region; BC EPR already captures ~315,000 t of plastics/yr</div></div>
       <div class="stat"><div class="n orange">$[SOM]</div><div class="l">Obtainable — target within first [N] years via partner network</div></div>
     </div>
     <p class="illus">⚠ Illustrative placeholders. Replace [TAM]/[SAM]/[SOM] and the target window with your researched figures before sending.</p>
@@ -351,7 +369,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
           <span class="pill">Partner-branded take-back</span>
           <span class="pill">IP / design licensing</span>
         </div>
-        <p>Collection costs near zero because partners host the bins. Margin is driven by how cheaply reclaimed cells and runners convert into finished product.</p>
+        <p>Collection costs near zero because partners host the bins, and the PS/ABS we take has no competing local buyer. Margin is driven by how cheaply reclaimed cells and runners convert into finished product.</p>
       </div>
       <div class="spec orangehd">
         <div class="spec-h"><span>HEX TILE — UNIT ECONOMICS (ILLUSTRATIVE)</span><span>RL-U</span></div>
