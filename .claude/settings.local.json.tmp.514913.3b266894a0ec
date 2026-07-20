@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo -n true)",
+      "Bash(python3 *)",
+      "Bash(nvidia-smi)",
+      "Bash(nvcc --version)",
+      "Bash(gcc --version)",
+      "Bash(cmake --version)",
+      "Bash(pacman -Si cmake)",
+      "Bash(git clone *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(gh run *)",
+      "Bash(gh api *)",
+      "Bash(git rm *)",
+      "Bash(git commit -q -m ' *)"
+    ]
+  }
+}

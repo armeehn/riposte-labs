@@ -309,6 +309,18 @@ p + p{margin-top:1em}
 .contact .bigmail:hover{background:var(--ink);color:var(--bone);
   box-shadow:8px 8px 0 var(--teal), 16px 16px 0 var(--pink)}
 
+/* ---------- footnotes ---------- */
+sup.fn{font-size:.62em;font-weight:700;line-height:0;margin-left:1px}
+sup.fn a{color:var(--pink);text-decoration:none}
+sup.fn a:hover{text-decoration:underline}
+ol.fnlist{list-style:none;counter-reset:fn;max-width:none;font-size:12.5px}
+ol.fnlist li{counter-increment:fn;position:relative;padding:9px 0 9px 30px;
+  border-bottom:1px dashed var(--ink);line-height:1.5}
+ol.fnlist li:last-child{border-bottom:none}
+ol.fnlist li::before{content:counter(fn);position:absolute;left:0;top:9px;font-weight:700;color:var(--pink)}
+ol.fnlist li a{font-weight:700;overflow-wrap:anywhere}
+ol.fnlist li:target{background:var(--bone-dim)}
+
 /* ---------- footer ---------- */
 footer{
   border-top:var(--rule);
@@ -355,7 +367,6 @@ footer .r{background:linear-gradient(105deg,
         <a href="recycling101.html">Recycling 101 <span class="ar">→</span></a>
       </div>
     </div>
-    <a class="navlink" href="blog.html">Blog</a>
   </nav>
 </header>
 
@@ -406,8 +417,9 @@ footer .r{background:linear-gradient(105deg,
   </div>
 
   <p>Canada discards <b>5,152 kt</b> of plastic a year and reprocesses only about
-  <b>6.5%</b> of it; batteries and devices are binned with most of their service
-  life still inside. Riposte Laboratories was founded to
+  <b>6.5%</b><sup class="fn"><a href="#fn1">1</a></sup> of it; batteries and devices
+  are binned with most of their service life still inside. Riposte Laboratories was
+  founded to
   <span class="hi">address that directly</span> — recovering material from the waste
   stream and returning it as durable, well-engineered products.</p>
   <p>We operate at a local scale: recovering materials that would otherwise be
@@ -441,8 +453,9 @@ footer .r{background:linear-gradient(105deg,
       <p class="lead">Plastic is collected from local sources, then shredded,
       sorted, and remanufactured through injection molding.</p>
       <p>Post-industrial PS and ABS — the resins in every model kit — are clean,
-      single-resin, and homogeneous, yet no BC program takes plastics from
-      business and no local buyer pays for them. We keep that loop local:
+      single-resin, and homogeneous<sup class="fn"><a href="#fn2">2</a></sup>, yet
+      no BC program takes plastics from business and no local buyer pays for
+      them<sup class="fn"><a href="#fn3">3</a></sup>. We keep that loop local:
       community-scale collection, in-house processing, and molded products
       returned to the area they came from.</p>
       <p class="dim">Short supply loops. Long-lived products. No ocean freight.</p>
@@ -636,6 +649,20 @@ footer .r{background:linear-gradient(105deg,
   <p class="lead">Whether you have plastic to divert, devices to recycle, or a
   project to discuss, we would be glad to hear from you.</p>
   <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section class="sec sources" id="sources">
+  <div class="sechead">
+    <span class="no">REF</span>
+    <h2>Sources</h2>
+    <span class="tag">// data references</span>
+  </div>
+  <ol class="fnlist">
+    <li id="fn1">Statistics Canada — Physical flow account for plastic material, 2022 (released 2026): 5,152 kt discarded, ~6.5% reprocessed into pellets, flakes and fibres. <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260326/dq260326e-eng.htm">statcan.gc.ca</a></li>
+    <li id="fn2">Association of Plastic Recyclers — post-industrial resin is typically cleaner and more homogeneous, with higher market value than post-consumer material. <a href="https://plasticsrecycling.org/resources/is-all-recycled-material-created-equal/">plasticsrecycling.org</a></li>
+    <li id="fn3">Recycling Council of BC — no set BC program accepts plastics from business; Merlin Plastics' published buy list covers PET/PP/PE but omits PS and ABS. <a href="https://rcbc.ca/our-faqs/where-can-i-recycle-plastics-from-my-business/">rcbc.ca</a> · <a href="https://merlinplastics.com/">merlinplastics.com</a></li>
+  </ol>
 </section>
 
 <div class="checker teal"></div>
