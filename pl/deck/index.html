@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riposte Laboratories · Briefing inwestorski</title>
+<link rel="canonical" href="/pl/deck/">
+<link rel="alternate" hreflang="en" href="/deck/">
+<link rel="alternate" hreflang="fr" href="/fr/deck/">
+<link rel="alternate" hreflang="es" href="/es/deck/">
+<link rel="alternate" hreflang="it" href="/it/deck/">
+<link rel="alternate" hreflang="pl" href="/pl/deck/">
+<link rel="alternate" hreflang="zh-Hans" href="/zh-hans/deck/">
+<link rel="alternate" hreflang="zh-Hant" href="/zh-hant/deck/">
+<link rel="alternate" hreflang="pa" href="/pa/deck/">
+<link rel="alternate" hreflang="ko" href="/ko/deck/">
+<link rel="alternate" hreflang="ja" href="/ja/deck/">
+<link rel="alternate" hreflang="tl" href="/tl/deck/">
+<link rel="alternate" hreflang="vi" href="/vi/deck/">
+<link rel="alternate" hreflang="hi" href="/hi/deck/">
+<link rel="alternate" hreflang="ar" href="/ar/deck/">
+<link rel="alternate" hreflang="fa" href="/fa/deck/">
+<link rel="alternate" hreflang="x-default" href="/deck/">
+<style>
+:root{
+  --ink:#1d1a17; --pink:#f0477d; --orange:#fe9a0d; --teal:#12b795;
+  --bone:#f6f1e7; --bone-dim:#eae4d6; --rule:2px solid var(--ink);
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--mono);background:var(--ink);color:var(--ink);-webkit-font-smoothing:antialiased}
+::selection{background:var(--pink);color:var(--bone)}
+
+/* ---- fixed chrome ---- */
+.chrome{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;display:flex;
+  align-items:center;justify-content:space-between;padding:0 14px;gap:12px;
+  background:var(--ink);color:var(--bone);border-bottom:2px solid var(--bone);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.chrome a{color:var(--bone);text-decoration:none;display:flex;align-items:center;gap:8px}
+.chrome a:hover{color:var(--orange)}
+.chrome .doc{opacity:.7}
+.chrome img{height:16px;display:block;filter:invert(1)}
+.prog{position:fixed;top:46px;left:0;height:4px;width:0;background:var(--pink);z-index:100;transition:width .25s}
+
+/* ---- pager ---- */
+.pager{position:fixed;bottom:14px;right:14px;z-index:100;display:flex;gap:6px;align-items:center}
+.pager .count{background:var(--ink);color:var(--bone);border:2px solid var(--bone);padding:6px 10px;font-size:11px;letter-spacing:.12em}
+.pager button{font-family:var(--mono);width:34px;height:32px;border:2px solid var(--bone);background:var(--ink);color:var(--bone);cursor:pointer;font-size:15px;line-height:1;transition:.12s}
+.pager button:hover{background:var(--pink);border-color:var(--pink)}
+
+/* ---- deck / slides ---- */
+.deck{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.slide{position:relative;min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;
+  justify-content:center;padding:clamp(30px,6vw,96px);padding-top:clamp(66px,8vw,96px);
+  background:var(--bone);border-bottom:var(--rule);overflow:hidden}
+.slide.dark{background:var(--ink);color:var(--bone)}
+.slide.pink{background:var(--pink);color:var(--bone)}
+
+/* top checker accent */
+.slide::before{content:"";position:absolute;top:46px;left:0;right:0;height:10px;
+  background:repeating-conic-gradient(var(--ink) 0 25%, var(--bone) 0 50%) 0 0/20px 20px;opacity:.9}
+.slide.dark::before{background:repeating-conic-gradient(var(--teal) 0 25%, var(--ink) 0 50%) 0 0/20px 20px}
+.slide.pink::before{background:repeating-conic-gradient(from 45deg,var(--pink) 0 25%,var(--teal) 0 50%) 0 0/20px 20px}
+.slide:first-child::before{top:0}
+
+/* slide head */
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.chip{background:var(--ink);color:var(--bone);padding:3px 9px;letter-spacing:.1em}
+.dark .chip{background:var(--teal)}
+.pink .chip{background:var(--ink)}
+.chip.pink{background:var(--pink)}.chip.orange{background:var(--orange);color:var(--ink)}.chip.teal{background:var(--teal)}
+h1{font-size:clamp(30px,6.6vw,74px);line-height:1.02;letter-spacing:-.01em;font-weight:800;max-width:16ch}
+h1 .hl{color:var(--pink)}.dark h1 .hl{color:var(--teal)}.pink h1 .hl{color:var(--orange)}
+h2{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:-.01em}
+p{font-size:clamp(14px,1.5vw,18px);line-height:1.6;max-width:60ch;margin-top:16px}
+p.big{font-size:clamp(16px,2vw,22px);max-width:52ch}
+.dim{opacity:.62}
+b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .hi{color:var(--orange)}
+.tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+
+/* layout helpers */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;margin-top:26px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px}
+.cols4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+@media(max-width:820px){.cols,.cols3,.cols4{grid-template-columns:1fr}}
+
+/* stat card */
+.stat{border:var(--rule);background:var(--bone);padding:20px 18px}
+.dark .stat{background:#241f1b;border-color:var(--bone)}
+.stat .n{font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1;letter-spacing:-.02em}
+.stat .n.pink{color:var(--pink)}.stat .n.orange{color:var(--orange)}.stat .n.teal{color:var(--teal)}
+.stat .l{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px;opacity:.8;line-height:1.5}
+
+/* spec list (site style) */
+.spec{border:var(--rule);background:var(--bone-dim)}
+.dark .spec{border-color:var(--bone);background:#241f1b}
+.spec-h{display:flex;justify-content:space-between;gap:10px;background:var(--ink);color:var(--bone);
+  padding:9px 14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.dark .spec-h{background:#2b2723;border-bottom:2px solid var(--bone)}
+.spec.tealhd .spec-h{background:var(--teal)}.spec.orangehd .spec-h{background:var(--orange);color:var(--ink)}
+.spec ul{list-style:none;padding:8px 14px 12px}
+.spec li{padding:8px 0;border-bottom:1px dashed var(--ink);font-size:13.5px;line-height:1.45}
+.dark .spec li{border-bottom-color:#5c554c}
+.spec li:last-child{border-bottom:none}
+.spec li::before{content:"▸ ";color:var(--pink);font-weight:800}.dark .spec li::before{color:var(--teal)}
+
+/* flow (loop) */
+.flow{display:flex;gap:0;flex-wrap:wrap;margin-top:30px}
+.flow .step{flex:1 1 130px;border:var(--rule);padding:14px 12px;text-align:center;position:relative;
+  margin-right:24px;background:var(--bone);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.dark .flow .step{background:#241f1b;border-color:var(--bone)}
+.flow .step:last-child{margin-right:0}
+.flow .step::after{content:"→";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:800;color:var(--pink)}
+.dark .flow .step::after{color:var(--teal)}
+.flow .step:last-child::after{content:none}
+.flow .step b{display:block;font-size:20px;margin-bottom:5px}
+.flow .step:nth-child(1){border-top:6px solid var(--pink)}.flow .step:nth-child(2){border-top:6px solid var(--orange)}
+.flow .step:nth-child(3){border-top:6px solid var(--teal)}.flow .step:nth-child(4){border-top:6px solid var(--ink)}
+.dark .flow .step:nth-child(4){border-top:6px solid var(--bone)}
+
+/* cover */
+.cover{align-items:center;text-align:center}
+.cover img{width:min(640px,86vw);filter:invert(1);margin:8px auto 4px}
+.cover .lede{font-size:clamp(16px,2.4vw,26px);letter-spacing:.02em;margin-top:20px}
+.cover .rule{width:64px;height:0;border-top:3px solid var(--teal);margin:26px auto}
+.marq{display:flex;gap:.6em;font-size:13px;letter-spacing:.28em;text-transform:uppercase;opacity:.8;justify-content:center;flex-wrap:wrap}
+.marq .r{background:var(--orange);color:var(--ink);padding:0 .4em}
+
+/* misc */
+.stamp{display:inline-block;margin-top:22px;border:2px solid var(--orange);color:var(--orange);
+  padding:7px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1.4deg)}
+.tbd{border:2px dashed currentColor;padding:14px 16px;margin-top:14px;opacity:.95}
+.tbd .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.tbd .v{font-size:clamp(18px,2.6vw,28px);font-weight:800;margin-top:4px}
+.illus{margin-top:22px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border-left:4px solid var(--orange);padding:6px 0 6px 12px;opacity:.85;max-width:56ch}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pill{border:var(--rule);padding:7px 12px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+.dark .pill{border-color:var(--bone)}
+.bigmail{display:inline-block;margin-top:24px;border:2px solid var(--bone);color:var(--bone);
+  padding:16px 22px;text-decoration:none;font-size:clamp(15px,2.2vw,22px);font-weight:800;letter-spacing:.03em;transition:.15s}
+.bigmail:hover{background:var(--bone);color:var(--ink)}
+.usebars{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:52ch}
+.usebars .row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;font-size:13px}
+.usebars .bar{height:16px;background:#241f1b;border:2px solid var(--bone);position:relative}
+.usebars .bar>span{position:absolute;inset:0 auto 0 0;background:var(--teal)}
+.usebars .row:nth-child(2) .bar>span{background:var(--pink)}
+.usebars .row:nth-child(3) .bar>span{background:var(--orange)}
+.usebars .row:nth-child(4) .bar>span{background:var(--teal)}
+.rail{display:flex;flex-direction:column;gap:0;margin-top:26px}
+.rail .r{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:14px 0;border-top:1px dashed var(--ink);align-items:baseline}
+.dark .rail .r{border-top-color:#5c554c}
+.rail .r .yr{font-weight:800;font-size:15px;letter-spacing:.04em}
+.rail .r .yr .ph{display:block;font-size:11px;opacity:.6;letter-spacing:.1em}
+.rail .r .d{font-size:14px;line-height:1.5}
+
+/* footnotes */
+sup.fn{font-size:.6em;font-weight:800;line-height:0;margin-left:1px}
+sup.fn a{color:var(--pink);text-decoration:none}
+.dark sup.fn a{color:var(--teal)}.pink sup.fn a{color:var(--ink)}
+sup.fn a:hover{text-decoration:underline}
+.slide.sources{justify-content:flex-start;padding-top:clamp(70px,9vw,96px);overflow-y:auto}
+ol.fnlist{list-style:none;counter-reset:fn;margin-top:22px;columns:2;column-gap:44px}
+@media(max-width:820px){ol.fnlist{columns:1}}
+ol.fnlist li{counter-increment:fn;position:relative;padding:8px 0 8px 26px;
+  border-bottom:1px dashed #5c554c;font-size:11.5px;line-height:1.45;break-inside:avoid}
+ol.fnlist li::before{content:counter(fn);position:absolute;left:0;top:8px;font-weight:800;color:var(--teal)}
+ol.fnlist li a{color:var(--bone);font-weight:700;overflow-wrap:anywhere}
+ol.fnlist li:target{background:#2b2723}
+
+/* print => one slide per page */
+@media print{
+  .chrome,.prog,.pager{display:none!important}
+  html,body{background:#fff}
+  .deck{height:auto;overflow:visible}
+  .slide{min-height:auto;height:auto;page-break-after:always;border:none;padding:34px}
+  .slide::before{top:0}
+  @page{size:1280px 720px;margin:0}
+}
+/* inline language + version pickers in the deck chrome */
+.chrome .ctl{display:flex;align-items:stretch;height:46px}
+.chrome .navpick{position:relative;display:flex;align-items:stretch;border-left:2px solid var(--bone)}
+.chrome .navpick>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:0 12px;color:var(--bone);white-space:nowrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.chrome .navpick>summary::-webkit-details-marker{display:none}
+.chrome .navpick[open]>summary,.chrome .navpick>summary:hover{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu{display:none}
+.chrome .navpick[open] .navmenu{display:flex;flex-direction:column}
+.chrome .navpick .navmenu{position:absolute;top:46px;inset-inline-end:0;background:var(--ink);border:2px solid var(--bone);min-width:168px;z-index:110}
+.chrome .navpick.lang[open] .navmenu{display:grid;grid-template-columns:1fr 1fr;min-width:250px;max-height:70vh;overflow:auto}
+.chrome .navpick .navmenu a{color:var(--bone);padding:8px 11px;text-decoration:none;border-bottom:1px dashed #5c554c;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.chrome .navpick .navmenu a[aria-current]{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu a:hover{background:var(--teal);color:var(--ink)}
+.chrome .navpick.lang .navmenu a{border-right:1px dashed #5c554c}
+.chrome .navpick.lang .navmenu a:nth-child(even){border-right:none}
+.chrome .navpick .navmenu a .en{display:block;font-size:9px;opacity:.6;text-transform:none;letter-spacing:0}
+.chrome .mttag{align-self:center;border:1px solid var(--orange);color:var(--orange);font-size:9px;padding:2px 5px;letter-spacing:.1em;margin-inline-start:8px}
+@media(max-width:700px){.chrome .doc{display:none}}
+</style>
+</head>
+<body>
+<div class="chrome">
+  <a href="/pl/"><img src="/logo.svg" alt="Riposte Laboratories"> <span>← Strona główna</span></a>
+  <span class="doc">Briefing inwestorski<span class="mttag" title="Tłumaczenie maszynowe. Oryginał jest w języku angielskim.">MT</span></span>
+  <div class="ctl"><details class="navpick"><summary>Wersja <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu"><a href="/pl/deck/" aria-current="true">Pełna</a><a href="/pl/mobile/deck/">Mobilna</a><a href="/pl/lite/deck/">Lekka</a><a href="/pl/eink/deck/">E-ink</a></div></details><details class="navpick lang"><summary><span class="globe" aria-hidden="true">🌐</span> Polski <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu langgrid"><a href="/deck/" hreflang="en" lang="en"><span class="endo">English</span><span class="en">English</span></a><a href="/fr/deck/" hreflang="fr" lang="fr"><span class="endo">Français</span><span class="en">French</span></a><a href="/es/deck/" hreflang="es" lang="es"><span class="endo">Español</span><span class="en">Spanish</span></a><a href="/it/deck/" hreflang="it" lang="it"><span class="endo">Italiano</span><span class="en">Italian</span></a><a href="/pl/deck/" hreflang="pl" lang="pl" aria-current="true"><span class="endo">Polski</span><span class="en">Polish</span></a><a href="/zh-hans/deck/" hreflang="zh-Hans" lang="zh-Hans"><span class="endo">简体中文</span><span class="en">Chinese (Simplified)</span></a><a href="/zh-hant/deck/" hreflang="zh-Hant" lang="zh-Hant"><span class="endo">繁體中文</span><span class="en">Chinese (Traditional)</span></a><a href="/pa/deck/" hreflang="pa" lang="pa"><span class="endo">ਪੰਜਾਬੀ</span><span class="en">Punjabi</span></a><a href="/ko/deck/" hreflang="ko" lang="ko"><span class="endo">한국어</span><span class="en">Korean</span></a><a href="/ja/deck/" hreflang="ja" lang="ja"><span class="endo">日本語</span><span class="en">Japanese</span></a><a href="/tl/deck/" hreflang="tl" lang="tl"><span class="endo">Tagalog</span><span class="en">Tagalog</span></a><a href="/vi/deck/" hreflang="vi" lang="vi"><span class="endo">Tiếng Việt</span><span class="en">Vietnamese</span></a><a href="/hi/deck/" hreflang="hi" lang="hi"><span class="endo">हिन्दी</span><span class="en">Hindi</span></a><a href="/ar/deck/" hreflang="ar" lang="ar" dir="rtl"><span class="endo">العربية</span><span class="en">Arabic</span></a><a href="/fa/deck/" hreflang="fa" lang="fa" dir="rtl"><span class="endo">فارسی</span><span class="en">Farsi</span></a></div></details></div>
+</div>
+<div class="prog" id="prog"></div>
+<main class="deck" id="deck">
+
+  <section class="slide dark cover">
+    <img src="/logo.svg" alt="Riposte Laboratories">
+    <div class="lede">Odzyskany materiał, <span class="hi">przeprojektowany.</span></div>
+    <div class="rule"></div>
+    <div class="marq"><span>parry</span><span class="r">♻</span><span>riposte</span><span class="r">♻</span><span>recycle</span><span class="r">♻</span><span>repeat</span></div>
+    <p class="dim" style="margin-top:34px;font-size:12px;letter-spacing:.1em">BRIEFING INWESTORSKI &#183; 2026 &#183; RIPOSTE LABORATORIES INC.</p>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip pink">SEC.01</span> Problem <span class="tag">// wartość wyrzucana w całości</span></div>
+    <h1>Wyrzucamy materiał, gdy <span class="hi">większość jego życia wciąż pozostaje.</span></h1>
+    <div class="cols3">
+      <div class="stat"><div class="n pink">6.5%</div><div class="l">Z 5,152 kt plastiku, który Kanada wyrzuca co roku, tylko ~6.5% jest przetwarzane ponownie na nowy materiał; reszta jest zakopywana lub spalana.<sup class="fn"><a href="#fn1">1</a></sup></div></div>
+      <div class="stat"><div class="n orange">$0 in BC</div><div class="l">Żaden program w BC nie kupuje poprodukcyjnego PS ani ABS, żywic w każdym zestawie modelarskim. Najbliżsi płacący odbiorcy są około 4,000 km na wschód, w Ontario.<sup class="fn"><a href="#fn2">2</a></sup></div></div>
+      <div class="stat"><div class="n teal">Oct 2027</div><div class="l">Finansowany przez producentów odbiór e-papierosów w BC jest ustawowy, ale niezbudowany; nie wskazano jeszcze żadnego przetwórcy, nawet w działającym programie Quebecu.<sup class="fn"><a href="#fn4">4</a></sup></div></div>
+    </div>
+    <p class="big">Strumień odpadów nie jest problemem utylizacji. To <span class="hi">źle wyceniony zapas</span>: posortowany, skoncentrowany i dostarczany do przewidywalnego zestawu drzwi każdego dnia.</p>
+  </section>
+  <section class="slide dark">
+    <div class="kicker"><span class="chip ">SEC.02</span> Teza <span class="tag">// kontratak</span></div>
+    <h1><b>riposte</b>: <span class="hi">kontratak</span> po paradzie.</h1>
+    <p class="big">Odzyskaj materiał w punkcie, w którym jest wyrzucany, przeprojektuj go w trwałe produkty i zwróć tej samej społeczności. Krótkie pętle, bez transportu morskiego, wartość zatrzymana lokalnie.</p>
+    <div class="flow" aria-label="process"><div class="step"><b>01</b>Przyjęcie<br><span class="dim">(strumień odpadów)</span></div><div class="step"><b>02</b>Parada<br><span class="dim">(zbiórka + sortowanie)</span></div><div class="step"><b>03</b>Riposta<br><span class="dim">(przeprojektowanie)</span></div><div class="step"><b>04</b>Powrót<br><span class="dim">(gotowy produkt)</span></div></div>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip orange">SEC.03</span> Model <span class="tag">// zbiórka w punkcie sprzedaży</span></div>
+    <h1>Dostawa, której nie musimy <span class="hi">szukać.</span></h1>
+    <div class="cols">
+      <div><p class="big">Prowadzimy pojemniki zbiórki w firmach, których produkty stają się odpadem; materiał wraca przez własne drzwi wejściowe, wstępnie posortowany i czysty. Żywica poprodukcyjna taka jak ta jest czystsza i bardziej jednorodna niż plastik ze zbiórki przydomowej, więc osiąga premię<sup class="fn"><a href="#fn3">3</a></sup>; nasza przybywa za darmo, ponieważ dziś żaden odbiorca w BC nie konkuruje o PS ani ABS.<sup class="fn"><a href="#fn2">2</a></sup></p></div>
+      <div class="spec"><div class="spec-h"><span>PARTNER NETWORK</span><span>RL-200</span></div><ul><li><b>Sklepy hobbystyczne i modelarskie</b>: ramki gunpla; jednożywiczny PS/ABS</li><li><b>Naprawa telefonów / IT</b>: ogniwa wyjmowane podczas serwisu</li><li><b>Sklepy z vapami i e-papierosami</b>: zużyte jednorazówki</li><li><b>Handel elektroniką</b>: wolumen z odbioru (np. Best Buy)</li><li>Dostawa jest czysta, posortowana i darmowa u drzwi</li></ul></div>
+    </div>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip teal">SEC.04</span> Linie produktowe <span class="tag">// dwa strumienie, jedna pętla</span></div>
+    <h1>Dwa surowce. Dwie <span class="hi">linie produktowe.</span></h1>
+    <div class="cols">
+      <div class="stat"><div class="n orange">Plastic Works</div><div class="l" style="text-transform:none;font-size:14px;line-height:1.6">Ramki PS/ABS z zestawów modelarskich rozdrabniane, sortowane i formowane wtryskowo w trwałe produkty; to żywice, dla których BC nie ma odbiorcy,<sup class="fn"><a href="#fn2">2</a></sup> wytwarzane lokalnie i sprzedawane lokalnie.</div></div>
+      <div class="stat"><div class="n teal">Project HEX</div><div class="l" style="text-transform:none;font-size:14px;line-height:1.6">Odzyskane ogniwa litowe testowane, klasyfikowane i odbudowywane w modułowe sześciokątne kafelki energetyczne: flagowy produkt.</div></div>
+    </div>
+    <p class="illus">Plastic Works finansuje przychód w krótkim horyzoncie i sieć zbiórki; Project HEX to szansa w skali venture.</p>
+  </section>
+  <section class="slide dark">
+    <div class="kicker"><span class="chip ">SEC.05</span> Flagowiec: Project HEX <span class="tag">// project hex &#183; modułowa energia z odzysku</span></div>
+    <div class="cols">
+      <div style="display:grid;place-items:center"><svg style="width:min(360px,80vw)" viewBox="0 0 300 300" fill="none" aria-label="HEX unit: hexagon with six edge-mounted cylindrical cells, a solar top face, and an optional magnetic screen">
+            <!-- sun -->
+            <g stroke="#fe9a0d" stroke-width="2">
+              <circle cx="266" cy="34" r="11" fill="#fe9a0d" stroke="none"/>
+              <line x1="266" y1="13" x2="266" y2="6"/><line x1="266" y1="55" x2="266" y2="62"/>
+              <line x1="245" y1="34" x2="238" y2="34"/><line x1="287" y1="34" x2="294" y2="34"/>
+              <line x1="251" y1="19" x2="246" y2="14"/><line x1="281" y1="49" x2="286" y2="54"/>
+              <line x1="281" y1="19" x2="286" y2="14"/><line x1="251" y1="49" x2="246" y2="54"/>
+            </g>
+
+            <!-- hexagon body -->
+            <polygon points="242,150 196,70.3 104,70.3 58,150 104,229.7 196,229.7"
+                     fill="#241f1b" stroke="#f6f1e7" stroke-width="2.5"/>
+
+            <!-- solar top face -->
+            <polygon points="204,150 177,103.2 123,103.2 96,150 123,196.8 177,196.8"
+                     fill="#12b795" stroke="#0c7a63" stroke-width="2"/>
+            <g stroke="#0c7a63" stroke-width="1.3" opacity=".85">
+              <line x1="150" y1="103.2" x2="150" y2="196.8"/>
+              <line x1="123" y1="103.2" x2="177" y2="196.8"/>
+              <line x1="177" y1="103.2" x2="123" y2="196.8"/>
+            </g>
+            <text x="150" y="139" fill="#04463a" font-size="10" text-anchor="middle" font-family="monospace" font-weight="700">SOLAR</text>
+            <text x="150" y="167" fill="#04463a" font-size="8" text-anchor="middle" font-family="monospace">TOP FACE</text>
+
+            <!-- six edge-mounted cells (one per edge, 60° apart) -->
+            <g stroke="#1d1a17" stroke-width="1.5">
+              <g transform="rotate(0 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+              <g transform="rotate(60 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+              <g transform="rotate(120 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+              <g transform="rotate(180 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+              <g transform="rotate(240 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+              <g transform="rotate(300 150 150)">
+                <rect x="118" y="61.3" width="64" height="18" rx="9" fill="#f6f1e7"/>
+                <rect x="123" y="61.3" width="5" height="18" fill="#fe9a0d" stroke="none"/>
+                <rect x="182" y="66.3" width="5" height="8" rx="1.5" fill="#fe9a0d"/>
+              </g>
+            </g>
+
+            <!-- optional magnetic screen module -->
+            <g>
+              <line x1="58" y1="150" x2="42" y2="150" stroke="#12b795" stroke-width="1.4" stroke-dasharray="3 3"/>
+              <circle cx="50" cy="143" r="2.4" fill="#12b795"/>
+              <circle cx="50" cy="157" r="2.4" fill="#12b795"/>
+              <rect x="6" y="123" width="34" height="54" rx="4" fill="#241f1b" stroke="#f6f1e7" stroke-width="2"/>
+              <rect x="11" y="129" width="24" height="34" rx="2" fill="#12b795"/>
+              <text x="23" y="150" fill="#04463a" font-size="7" text-anchor="middle" font-family="monospace">UI</text>
+              <text x="23" y="171" fill="#f6f1e7" font-size="6.5" text-anchor="middle" font-family="monospace">SCREEN</text>
+            </g>
+
+            <!-- energy callout -->
+            <text x="150" y="256" fill="#f6f1e7" font-size="12" text-anchor="middle" font-family="monospace" font-weight="700">6S · 14.46 Wh</text>
+            <text x="150" y="272" fill="#12b795" font-size="8.5" text-anchor="middle" font-family="monospace">6 × 2.41 Wh · 45 × 13 mm cells</text>
+          </svg></div>
+      <div>
+        <h2>Kafelek energetyczny, a nie pakiet baterii.</h2>
+        <div class="spec tealhd" style="margin-top:18px"><div class="spec-h"><span>SPEC / MODUŁ HEX</span><span>RL-H01</span></div><ul><li>6 &#215; cylindryczne Li-ion, <b>45 &#215; 13 mm</b> &#183; odzyskane i klasyfikowane</li><li>Jedno ogniwo na krawędź, połączone <b>6S</b> (szeregowo)</li><li>6 &#215; 2.41 Wh = <b>14.46 Wh</b> na kafelek</li><li>Fotowoltaiczna górna ściana &#183; samoładowanie</li><li>Magnetyczne krawędzie &#183; łączą się w tesselujące matryce</li><li>Montowany magnetycznie ekran do interfejsu + telemetrii</li></ul></div>
+        <span class="stamp">Zgłoszenie patentowe w toku &#183; seria RL-H</span>
+      </div>
+    </div>
+  </section>
+  <section class="slide pink">
+    <div class="kicker"><span class="chip ">SEC.06</span> Wizja <span class="tag">// samoładująca się powłoka</span></div>
+    <h1>Sześciokąty tesselują. Więc <span class="hi">pokrywamy cały dom.</span></h1>
+    <div class="cols">
+      <div style="display:grid;place-items:center"><svg style="width:min(440px,88vw)" viewBox="0 0 400 240" fill="none" style="width:min(440px,88vw)" aria-label="geodesic dome clad in tessellating hexagonal HEX tiles">
+          <defs><clipPath id="domeclip"><path d="M80,192 A120,120 0 0 1 320,192 Z"/></clipPath></defs>
+          <g stroke="#fe9a0d" stroke-width="2"><circle cx="352" cy="40" r="12" fill="#fe9a0d" stroke="none"/>
+            <line x1="352" y1="16" x2="352" y2="8"/><line x1="330" y1="40" x2="322" y2="40"/><line x1="336" y1="24" x2="330" y2="18"/><line x1="368" y1="24" x2="374" y2="18"/></g>
+          <line x1="40" y1="192" x2="360" y2="192" stroke="#1d1a17" stroke-width="2.5"/>
+          <path d="M80,192 A120,120 0 0 1 320,192 Z" fill="#f6f1e7"/>
+          <g clip-path="url(#domeclip)" stroke="#1d1a17" stroke-width="1.4">
+            <polygon points="112.5,163.1 104.0,177.8 87.0,177.8 78.5,163.1 87.0,148.3 104.0,148.3" fill="none"/>
+            <polygon points="138.0,118.9 129.5,133.6 112.5,133.6 104.0,118.9 112.5,104.2 129.5,104.2" fill="none"/>
+            <polygon points="138.0,148.3 129.5,163.1 112.5,163.1 104.0,148.3 112.5,133.6 129.5,133.6" fill="none"/>
+            <polygon points="138.0,177.8 129.5,192.5 112.5,192.5 104.0,177.8 112.5,163.1 129.5,163.1" fill="none"/>
+            <polygon points="163.5,104.2 155.0,118.9 138.0,118.9 129.5,104.2 138.0,89.4 155.0,89.4" fill="none"/>
+            <polygon points="163.5,133.6 155.0,148.3 138.0,148.3 129.5,133.6 138.0,118.9 155.0,118.9" fill="none"/>
+            <polygon points="163.5,163.1 155.0,177.8 138.0,177.8 129.5,163.1 138.0,148.3 155.0,148.3" fill="none"/>
+            <polygon points="189.0,89.4 180.5,104.2 163.5,104.2 155.0,89.4 163.5,74.7 180.5,74.7" fill="none"/>
+            <polygon points="189.0,118.9 180.5,133.6 163.5,133.6 155.0,118.9 163.5,104.2 180.5,104.2" fill="none"/>
+            <polygon points="189.0,148.3 180.5,163.1 163.5,163.1 155.0,148.3 163.5,133.6 180.5,133.6" fill="#12b795"/>
+            <polygon points="189.0,177.8 180.5,192.5 163.5,192.5 155.0,177.8 163.5,163.1 180.5,163.1" fill="none"/>
+            <polygon points="214.5,104.2 206.0,118.9 189.0,118.9 180.5,104.2 189.0,89.4 206.0,89.4" fill="#fe9a0d"/>
+            <polygon points="214.5,133.6 206.0,148.3 189.0,148.3 180.5,133.6 189.0,118.9 206.0,118.9" fill="none"/>
+            <polygon points="214.5,163.1 206.0,177.8 189.0,177.8 180.5,163.1 189.0,148.3 206.0,148.3" fill="#12b795"/>
+            <polygon points="240.0,89.4 231.5,104.2 214.5,104.2 206.0,89.4 214.5,74.7 231.5,74.7" fill="none"/>
+            <polygon points="240.0,118.9 231.5,133.6 214.5,133.6 206.0,118.9 214.5,104.2 231.5,104.2" fill="none"/>
+            <polygon points="240.0,148.3 231.5,163.1 214.5,163.1 206.0,148.3 214.5,133.6 231.5,133.6" fill="none"/>
+            <polygon points="240.0,177.8 231.5,192.5 214.5,192.5 206.0,177.8 214.5,163.1 231.5,163.1" fill="none"/>
+            <polygon points="265.5,104.2 257.0,118.9 240.0,118.9 231.5,104.2 240.0,89.4 257.0,89.4" fill="none"/>
+            <polygon points="265.5,133.6 257.0,148.3 240.0,148.3 231.5,133.6 240.0,118.9 257.0,118.9" fill="none"/>
+            <polygon points="265.5,163.1 257.0,177.8 240.0,177.8 231.5,163.1 240.0,148.3 257.0,148.3" fill="#f0477d"/>
+            <polygon points="291.0,118.9 282.5,133.6 265.5,133.6 257.0,118.9 265.5,104.2 282.5,104.2" fill="none"/>
+            <polygon points="291.0,148.3 282.5,163.1 265.5,163.1 257.0,148.3 265.5,133.6 282.5,133.6" fill="none"/>
+            <polygon points="291.0,177.8 282.5,192.5 265.5,192.5 257.0,177.8 265.5,163.1 282.5,163.1" fill="none"/>
+            <polygon points="316.5,133.6 308.0,148.3 291.0,148.3 282.5,133.6 291.0,118.9 308.0,118.9" fill="none"/>
+            <polygon points="316.5,163.1 308.0,177.8 291.0,177.8 282.5,163.1 291.0,148.3 308.0,148.3" fill="none"/>
+          </g>
+          <path d="M80,192 A120,120 0 0 1 320,192" fill="none" stroke="#1d1a17" stroke-width="2.5"/>
+          <text x="200" y="222" fill="#1d1a17" font-size="11" text-anchor="middle" font-family="monospace" font-weight="700">GEODESIC ENERGY SKIN</text>
+        </svg></div>
+      <div><p class="big">Każdy kafelek wytwarza, magazynuje i łączy. Połącz ich wystarczająco dużo, a matryca staje się zewnętrzną powierzchnią budynku: dom geodezyjny, który sam się zasila. Matryca skaluje się bez przerw, owija złożone krzywizny i rośnie po jednym odzyskanym kafelku naraz. Strumień odpadów staje się rozproszoną infrastrukturą energetyczną.</p></div>
+    </div>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip pink">SEC.07</span> Dlaczego teraz <span class="tag">// sprzyjające wiatry się układają</span></div>
+    <h1>Moment dla <span class="hi">odzyskanej, rozproszonej energii.</span></h1>
+    <div class="pills"><span class="pill">EPR dla e-papierosów w BC ustawowo na październik 2027; plany do grudnia 2026<sup class="fn"><a href="#fn4">4</a></sup></span><span class="pill">Czysta żywica poprodukcyjna warta wielokrotność beli ze zbiórki przydomowej<sup class="fn"><a href="#fn3">3</a></sup></span><span class="pill">Pierwotny ABS ~US$2,000/t; PS ~US$1,350/t<sup class="fn"><a href="#fn5">5</a></sup></span><span class="pill">&gt;99% recyklingowanego plastiku BC już pozostaje w prowincji<sup class="fn"><a href="#fn6">6</a></sup></span><span class="pill">448 pożarów w zakładach odpadów w 2025 ($2.5B); e-papierosy wskazane jako czynnik<sup class="fn"><a href="#fn7">7</a></sup></span><span class="pill">Komercyjny popyt na recyklingowany PS otwierający się na wschodzie<sup class="fn"><a href="#fn8">8</a></sup></span></div>
+    <p class="big">Surowca jest w bród i jest darmowy tam, gdzie nikt inny za niego nie płaci; regulacje i odbiorcy przybywają w ustalonym rytmie. Riposte znajduje się dokładnie tam, gdzie te krzywe się przecinają.</p>
+  </section>
+  <section class="slide dark">
+    <div class="kicker"><span class="chip ">SEC.08</span> Rynek <span class="tag">// poglądowo &#183; wielkości zastępcze</span></div>
+    <h1>Duży rynek, wchodzony <span class="hi">po jednym pojemniku naraz.</span></h1>
+    <div class="cols3">
+      <div class="stat"><div class="n teal">$[TAM]</div><div class="l">Całkowity: rozproszone magazynowanie energii i produkty z materiałów z recyklingu</div></div>
+      <div class="stat"><div class="n pink">$[SAM]</div><div class="l">Obsługiwalny: modułowa energia domowa i produkty z odzysku w regionie; EPR w BC już przechwytuje około 315,000 t plastiku rocznie<sup class="fn"><a href="#fn9">9</a></sup></div></div>
+      <div class="stat"><div class="n orange">$[SOM]</div><div class="l">Osiągalny: cel w ciągu pierwszych [N] lat poprzez sieć partnerów</div></div>
+    </div>
+    <p class="illus">&#9888; Poglądowe wartości zastępcze. Zastąp [TAM]/[SAM]/[SOM] oraz okno celu swoimi zbadanymi liczbami przed wysłaniem.</p>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip orange">SEC.09</span> Model biznesowy <span class="tag">// jak zarabia</span></div>
+    <h1>Darmowy surowiec. <span class="hi">Wiele linii przychodów.</span></h1>
+    <div class="cols">
+      <div><div class="pills" style="margin-top:6px"><span class="pill">Sprzedaż kafelków i matryc HEX</span><span class="pill">Produkty Plastic Works</span><span class="pill">Odbiór pod marką partnera</span><span class="pill">Licencjonowanie IP / wzornictwa</span></div><p>Koszty zbiórki są bliskie zeru, ponieważ partnerzy prowadzą pojemniki, a PS/ABS, który bierzemy, nie ma konkurencyjnego lokalnego odbiorcy.<sup class="fn"><a href="#fn2">2</a></sup> Marża zależy od tego, jak tanio odzyskane ogniwa i ramki przekształcają się w gotowy produkt.</p></div>
+      <div class="spec orangehd"><div class="spec-h"><span>HEX TILE &#183; EKONOMIKA JEDNOSTKI (POGLĄDOWA)</span><span>RL-U</span></div><ul><li>Odzyskane ogniwa (6): <b>$[__]</b> &#183; pozyskane za darmo, klasyfikowane we własnym zakresie</li><li>Górny panel PV + obudowa + magnesy: <b>$[__]</b></li><li>Montaż + robocizna testowa: <b>$[__]</b></li><li>Koszt własny loco / kafelek: <b>$[__]</b></li><li>Cena docelowa / kafelek: <b>$[__]</b></li><li>Marża brutto: <b>[__]%</b></li></ul></div>
+    </div>
+    <p class="illus">&#9888; Poglądowa ekonomika jednostki; zastąp rzeczywistymi liczbami BOM, robocizny i cen.</p>
+  </section>
+  <section class="slide dark">
+    <div class="kicker"><span class="chip ">SEC.10</span> Mapa drogowa <span class="tag">// prototyp &#8594; produkcja &#8594; dom pilotażowy</span></div>
+    <h1>Od jednostki laboratoryjnej do <span class="hi">zasilanej kopuły.</span></h1>
+    <div class="rail">
+      <div class="r"><div class="yr">TERAZ<span class="ph">Faza 0</span></div><div class="d">Działający prototyp HEX, złożony patent, podpisani pierwsi partnerzy zbiórki. Plastic Works generuje wczesny przychód.</div></div>
+      <div class="r"><div class="yr">[Q_/__]<span class="ph">Faza 1</span></div><div class="d">Pilotażowa sieć partnerów w handlu hobbystycznym, naprawczym i e-papierosowym. Linia klasyfikacji ogniw + montaż kafelków w małych partiach.</div></div>
+      <div class="r"><div class="yr">[__]<span class="ph">Faza 2</span></div><div class="d">Ograniczona seria produkcyjna matryc HEX; certyfikacja i testy bezpieczeństwa; pierwsze instalacje matryc.</div></div>
+      <div class="r"><div class="yr">[__]<span class="ph">Faza 3</span></div><div class="d">Geodezyjny dom pilotażowy w pełni pokryty HEX; rozmowy licencyjne; skalowanie sieci regionalnej.</div></div>
+    </div>
+    <p class="illus">&#9888; Zastąp daty w nawiasach swoją rzeczywistą osią czasu.</p>
+  </section>
+  <section class="slide">
+    <div class="kicker"><span class="chip teal">SEC.11</span> Zespół i przewaga <span class="tag">// dlaczego riposte wygrywa</span></div>
+    <h1>Obronny pod względem <span class="hi">dostaw, IP i marki.</span></h1>
+    <div class="cols3">
+      <div class="stat"><div class="n teal">Dostawy</div><div class="l">Sieć partnerów dostarczająca czysty, posortowany surowiec bez kosztów; trudna do odtworzenia dla nowego gracza.</div></div>
+      <div class="stat"><div class="n pink">IP</div><div class="l">Architektura HEX ze zgłoszeniem patentowym w toku: ogniwa na krawędziach, ściana słoneczna, magnetyczna tesselacja.</div></div>
+      <div class="stat"><div class="n orange">Marka</div><div class="l">Wyrazista tożsamość (esh, godło), która zmienia recykling w produkt, jaki ludzie chcą mieć na ścianie.</div></div>
+    </div>
+    <p class="illus">Dodaj tu biogramy założycieli i zespołu: nazwiska, istotne doświadczenie i doradców.</p>
+  </section>
+  <section class="slide dark">
+    <div class="kicker"><span class="chip ">SEC.12</span> Prośba <span class="tag">// poglądowo &#183; tutaj Twoje liczby</span></div>
+    <h1>Zbieramy, aby osiągnąć <span class="hi">produkcję.</span></h1>
+    <div class="cols">
+      <div>
+        <div class="tbd"><div class="k">Zbieramy</div><div class="v">$[____] &#183; [seed]</div></div>
+        <div class="tbd" style="margin-top:12px"><div class="k">Wycena / warunki</div><div class="v">$[____] [cap / pre-money]</div></div>
+        <div class="tbd" style="margin-top:12px"><div class="k">Pas startowy</div><div class="v">[__] miesięcy &#8594; Faza [__]</div></div>
+      </div>
+      <div>
+        <h2 style="font-size:18px;letter-spacing:.06em;text-transform:uppercase">Wykorzystanie środków <span class="dim">(poglądowo)</span></h2>
+        <div class="usebars">
+          <div class="row"><span>[40%]</span><div class="bar"><span style="width:40%"></span></div><span>B&amp;R &#183; certyfikacja</span></div>
+          <div class="row"><span>[30%]</span><div class="bar"><span style="width:30%"></span></div><span>Linia produkcyjna</span></div>
+          <div class="row"><span>[20%]</span><div class="bar"><span style="width:20%"></span></div><span>Sieć i operacje</span></div>
+          <div class="row"><span>[10%]</span><div class="bar"><span style="width:10%"></span></div><span>Zespół</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="illus">&#9888; Każda liczba na tym slajdzie jest wartością zastępczą. Ustal zbiórkę, warunki, pas startowy i alokację przed udostępnieniem.</p>
+  </section>
+  <section class="slide pink cover">
+    <img src="/logo.svg" alt="Riposte Laboratories">
+    <div class="lede">Sparuj odpad. <span class="hi">Ripostuj produktem.</span></div>
+    <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+    <p class="dim" style="margin-top:26px;font-size:12px;letter-spacing:.1em">RIPOSTE LABORATORIES INC. &#183; POUFNE &#183; 2026</p>
+  </section>
+  <section class="slide dark sources" id="sources">
+    <div class="kicker"><span class="chip">APPENDIX</span> Źródła i uwagi <span class="tag">// odniesienia do danych</span></div>
+    <h2>Źródła i uwagi</h2>
+    <ol class="fnlist"><li id="fn1">Statistics Canada &#183; Rachunek przepływów fizycznych materiałów z tworzyw sztucznych, 2022 (opublikowany 2026): 5,152 kt wyrzuconych, około 6.5% przetworzonych ponownie. <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260326/dq260326e-eng.htm">statcan.gc.ca</a></li><li id="fn2">Recycling Council of BC &#183; żaden stały program w BC nie przyjmuje plastiku od firm; lista skupu Merlin Plastics pomija PS/ABS; najbliżsi opublikowani odbiorcy PS/ABS są w Ontario (EPL Plastics, Kal-Polymers). <a href="https://rcbc.ca/our-faqs/where-can-i-recycle-plastics-from-my-business/">rcbc.ca</a> &#183; <a href="https://merlinplastics.com/">merlinplastics.com</a></li><li id="fn3">Association of Plastic Recyclers (żywica poprodukcyjna jest czystsza, bardziej jednorodna, o wyższej wartości) oraz orientacyjne przedziały odbiorców (Seraphim Plastics) wobec średnich dla beli pokonsumenckich (SMP / Resource Recycling). <a href="https://plasticsrecycling.org/resources/is-all-recycled-material-created-equal/">plasticsrecycling.org</a></li><li id="fn4">Recycling Regulation, B.C. Reg. 449/2004 (e-papierosy dodane w listopadzie 2025; zatwierdzony plan wymagany 1 października 2027, zgłoszenia do 15 grudnia 2026); projekt planu Call2Recycle dla BC na lata 2025&#8211;2029. Program Quebecu jest jedynym działającym; nie wskazano publicznie żadnego przetwórcy. <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/449_2004">bclaws.gov.bc.ca</a> &#183; <a href="https://call2recycle.ca/british-columbia/">call2recycle.ca</a></li><li id="fn5">ChemAnalyst &#183; ceny pierwotnych żywic w USA, 2026: ABS około US$1,987/t; polistyren około US$1,348/t. <a href="https://www.chemanalyst.com/Pricing-data/acrylonitrile-butadiene-styrene-19">chemanalyst.com</a></li><li id="fn6">Recycle BC &#183; raportowanie za 2024: ponad 99% zebranego plastiku przetwarzane w prowincji (Merlin Plastics głównym przetwórcą). <a href="https://recyclebc.ca/learn/our-impact/plastic-recycling/">recyclebc.ca</a></li><li id="fn7">Fire Rover za pośrednictwem Resource Recycling &#183; 448 publicznie zgłoszonych pożarów w zakładach odpadów i recyklingu w USA i Kanadzie w 2025 (około 2.5 mld USD strat); urządzenia do vapingu wskazane jako czynnik napędzający. <a href="https://resource-recycling.com/e-scrap/2026/03/27/report-pegs-fire-losses-at-2-5b-in-us-and-canada-recycling-industry/">resource-recycling.com</a></li><li id="fn8">Global Insulation &#183; UpSolv (dawniej Polystyvert) rozpoczął komercyjną produkcję recyklingowanego PS w lutym 2026 (około 9,000 t/rok), pozyskując surowiec zewnętrzny. <a href="https://www.globalinsulation.com/news/2185-upsolv-launches-commercial-recycled-polystyrene-resin-production">globalinsulation.com</a></li><li id="fn9">Province of BC &#183; Pięcioletni plan działania EPR 2021&#8211;2026: około 315,000 t plastiku rocznie przechwytywane w programach EPR w BC (liczba pochodzi z ok. 2019 i może obejmować produkty zawierające plastik). <a href="https://www2.gov.bc.ca/assets/gov/environment/waste-management/recycling/recycle/extended_producer_five_year_action_plan.pdf">www2.gov.bc.ca</a></li></ol>
+    <p class="illus">Ceny są orientacyjnymi opublikowanymi wartościami wg stanu na lipiec 2026, a nie ofertami; warunki przyjęcia firmy należy potwierdzić bezpośrednio.</p>
+  </section>
+</main>
+<div class="pager"><span class="count" id="count">01 / 15</span><button id="prev" aria-label="previous slide">‹</button><button id="next" aria-label="next slide">›</button></div>
+<script>(function(){
+  var deck=document.getElementById('deck');
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var count=document.getElementById('count');
+  var prog=document.getElementById('prog');
+  var total=slides.length, idx=0;
+  function pad(n){return (n<10?'0':'')+n;}
+  function update(){
+    idx=Math.round(deck.scrollTop/window.innerHeight);
+    if(idx<0)idx=0; if(idx>total-1)idx=total-1;
+    count.textContent=pad(idx+1)+' / '+pad(total);
+    prog.style.width=(total>1?(idx/(total-1))*100:0)+'%';
+  }
+  function go(i){
+    i=Math.max(0,Math.min(total-1,i));
+    slides[i].scrollIntoView({behavior:'smooth'});
+  }
+  deck.addEventListener('scroll',function(){window.requestAnimationFrame(update);},{passive:true});
+  document.getElementById('next').addEventListener('click',function(){go(idx+1);});
+  document.getElementById('prev').addEventListener('click',function(){go(idx-1);});
+  document.addEventListener('keydown',function(e){
+    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(idx+1);}
+    else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(idx-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(total-1);}
+  });
+  update();
+})();</script>
+</body>
+</html>

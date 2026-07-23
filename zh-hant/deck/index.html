@@ -8,6 +8,8 @@
 <link rel="alternate" hreflang="en" href="/deck/">
 <link rel="alternate" hreflang="fr" href="/fr/deck/">
 <link rel="alternate" hreflang="es" href="/es/deck/">
+<link rel="alternate" hreflang="it" href="/it/deck/">
+<link rel="alternate" hreflang="pl" href="/pl/deck/">
 <link rel="alternate" hreflang="zh-Hans" href="/zh-hans/deck/">
 <link rel="alternate" hreflang="zh-Hant" href="/zh-hant/deck/">
 <link rel="alternate" hreflang="pa" href="/pa/deck/">
@@ -175,23 +177,32 @@ ol.fnlist li:target{background:#2b2723}
   .slide::before{top:0}
   @page{size:1280px 720px;margin:0}
 }
-/* language + version utility strip for translated decks */
-.uvbar{position:fixed;top:46px;left:0;right:0;z-index:99;display:flex;gap:10px;justify-content:flex-end;align-items:center;padding:5px 12px;background:#2b2723;color:var(--bone);border-bottom:2px solid var(--bone);font-size:11px}
-.uvbar a{color:var(--bone)}
-.uvbar .vswitch{display:flex;border:2px solid var(--bone)} .uvbar .vswitch a{padding:3px 8px;text-decoration:none;border-left:1px dashed var(--bone)} .uvbar .vswitch a:first-child{border-left:none} .uvbar .vswitch a[aria-current]{background:var(--bone);color:var(--ink);font-weight:700}
-.uvbar .langpick>summary{list-style:none;cursor:pointer;border:2px solid var(--bone);padding:3px 9px;display:flex;gap:6px;align-items:center} .uvbar .langpick>summary::-webkit-details-marker{display:none}
-.uvbar .langmenu{position:absolute;top:30px;inset-inline-end:12px;background:var(--ink);border:2px solid var(--bone);display:grid;grid-template-columns:1fr 1fr;min-width:220px;max-height:60vh;overflow:auto}
-.uvbar .langmenu a{padding:7px 10px;text-decoration:none;border-bottom:1px dashed var(--bone)} .uvbar .langmenu a[aria-current]{background:var(--bone);color:var(--ink)} .uvbar .langmenu a .en{display:block;font-size:9px;opacity:.6}
-.deck{padding-top:28px}
+/* inline language + version pickers in the deck chrome */
+.chrome .ctl{display:flex;align-items:stretch;height:46px}
+.chrome .navpick{position:relative;display:flex;align-items:stretch;border-left:2px solid var(--bone)}
+.chrome .navpick>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:0 12px;color:var(--bone);white-space:nowrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.chrome .navpick>summary::-webkit-details-marker{display:none}
+.chrome .navpick[open]>summary,.chrome .navpick>summary:hover{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu{display:none}
+.chrome .navpick[open] .navmenu{display:flex;flex-direction:column}
+.chrome .navpick .navmenu{position:absolute;top:46px;inset-inline-end:0;background:var(--ink);border:2px solid var(--bone);min-width:168px;z-index:110}
+.chrome .navpick.lang[open] .navmenu{display:grid;grid-template-columns:1fr 1fr;min-width:250px;max-height:70vh;overflow:auto}
+.chrome .navpick .navmenu a{color:var(--bone);padding:8px 11px;text-decoration:none;border-bottom:1px dashed #5c554c;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.chrome .navpick .navmenu a[aria-current]{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu a:hover{background:var(--teal);color:var(--ink)}
+.chrome .navpick.lang .navmenu a{border-right:1px dashed #5c554c}
+.chrome .navpick.lang .navmenu a:nth-child(even){border-right:none}
+.chrome .navpick .navmenu a .en{display:block;font-size:9px;opacity:.6;text-transform:none;letter-spacing:0}
+.chrome .mttag{align-self:center;border:1px solid var(--orange);color:var(--orange);font-size:9px;padding:2px 5px;letter-spacing:.1em;margin-inline-start:8px}
+@media(max-width:700px){.chrome .doc{display:none}}
 </style>
 </head>
 <body>
 <div class="chrome">
   <a href="/zh-hant/"><img src="/logo.svg" alt="Riposte Laboratories"> <span>← 首頁</span></a>
-  <span>投資人簡報</span>
-  <span class="doc">DOC NO. RL-DECK-01 · Confidential</span>
+  <span class="doc">投資人簡報<span class="mttag" title="機器翻譯。原文為英文。">MT</span></span>
+  <div class="ctl"><details class="navpick"><summary>版本 <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu"><a href="/zh-hant/deck/" aria-current="true">完整版</a><a href="/zh-hant/mobile/deck/">行動版</a><a href="/zh-hant/lite/deck/">精簡版</a><a href="/zh-hant/eink/deck/">電子紙</a></div></details><details class="navpick lang"><summary><span class="globe" aria-hidden="true">🌐</span> 繁體中文 <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu langgrid"><a href="/deck/" hreflang="en" lang="en"><span class="endo">English</span><span class="en">English</span></a><a href="/fr/deck/" hreflang="fr" lang="fr"><span class="endo">Français</span><span class="en">French</span></a><a href="/es/deck/" hreflang="es" lang="es"><span class="endo">Español</span><span class="en">Spanish</span></a><a href="/it/deck/" hreflang="it" lang="it"><span class="endo">Italiano</span><span class="en">Italian</span></a><a href="/pl/deck/" hreflang="pl" lang="pl"><span class="endo">Polski</span><span class="en">Polish</span></a><a href="/zh-hans/deck/" hreflang="zh-Hans" lang="zh-Hans"><span class="endo">简体中文</span><span class="en">Chinese (Simplified)</span></a><a href="/zh-hant/deck/" hreflang="zh-Hant" lang="zh-Hant" aria-current="true"><span class="endo">繁體中文</span><span class="en">Chinese (Traditional)</span></a><a href="/pa/deck/" hreflang="pa" lang="pa"><span class="endo">ਪੰਜਾਬੀ</span><span class="en">Punjabi</span></a><a href="/ko/deck/" hreflang="ko" lang="ko"><span class="endo">한국어</span><span class="en">Korean</span></a><a href="/ja/deck/" hreflang="ja" lang="ja"><span class="endo">日本語</span><span class="en">Japanese</span></a><a href="/tl/deck/" hreflang="tl" lang="tl"><span class="endo">Tagalog</span><span class="en">Tagalog</span></a><a href="/vi/deck/" hreflang="vi" lang="vi"><span class="endo">Tiếng Việt</span><span class="en">Vietnamese</span></a><a href="/hi/deck/" hreflang="hi" lang="hi"><span class="endo">हिन्दी</span><span class="en">Hindi</span></a><a href="/ar/deck/" hreflang="ar" lang="ar" dir="rtl"><span class="endo">العربية</span><span class="en">Arabic</span></a><a href="/fa/deck/" hreflang="fa" lang="fa" dir="rtl"><span class="endo">فارسی</span><span class="en">Farsi</span></a></div></details></div>
 </div>
-<div class="uvbar"><nav class="vswitch" aria-label="版本"><a href="/zh-hant/deck/" aria-current="true">完整版</a><a href="/zh-hant/mobile/deck/">行動版</a><a href="/zh-hant/lite/deck/">精簡版</a><a href="/zh-hant/eink/deck/">電子紙</a></nav><details class="langpick"><summary aria-label="語言"><span class="globe" aria-hidden="true">🌐</span> 繁體中文 <span class="car" aria-hidden="true">▾</span></summary><div class="langmenu"><a href="/deck/" hreflang="en" lang="en">English<span class="en">English</span></a><a href="/fr/deck/" hreflang="fr" lang="fr">Français<span class="en">French</span></a><a href="/es/deck/" hreflang="es" lang="es">Español<span class="en">Spanish</span></a><a href="/zh-hans/deck/" hreflang="zh-Hans" lang="zh-Hans">简体中文<span class="en">Chinese (Simplified)</span></a><a href="/zh-hant/deck/" hreflang="zh-Hant" lang="zh-Hant" aria-current="true">繁體中文<span class="en">Chinese (Traditional)</span></a><a href="/pa/deck/" hreflang="pa" lang="pa">ਪੰਜਾਬੀ<span class="en">Punjabi</span></a><a href="/ko/deck/" hreflang="ko" lang="ko">한국어<span class="en">Korean</span></a><a href="/ja/deck/" hreflang="ja" lang="ja">日本語<span class="en">Japanese</span></a><a href="/tl/deck/" hreflang="tl" lang="tl">Tagalog<span class="en">Tagalog</span></a><a href="/vi/deck/" hreflang="vi" lang="vi">Tiếng Việt<span class="en">Vietnamese</span></a><a href="/hi/deck/" hreflang="hi" lang="hi">हिन्दी<span class="en">Hindi</span></a><a href="/ar/deck/" hreflang="ar" lang="ar" dir="rtl">العربية<span class="en">Arabic</span></a><a href="/fa/deck/" hreflang="fa" lang="fa" dir="rtl">فارسی<span class="en">Farsi</span></a></div></details></div>
 <div class="prog" id="prog"></div>
 <main class="deck" id="deck">
 

@@ -33,6 +33,8 @@ const LANGS = [
   {code:'en',      hreflang:'en',      endo:'English',      en:'English',              dir:'ltr'},
   {code:'fr',      hreflang:'fr',      endo:'Français',endo2:'French',            en:'French',   dir:'ltr'},
   {code:'es',      hreflang:'es',      endo:'Español', en:'Spanish',              dir:'ltr'},
+  {code:'it',      hreflang:'it',      endo:'Italiano',     en:'Italian',              dir:'ltr'},
+  {code:'pl',      hreflang:'pl',      endo:'Polski',       en:'Polish',               dir:'ltr'},
   {code:'zh-hans', hreflang:'zh-Hans', endo:'简体中文', en:'Chinese (Simplified)', dir:'ltr'},
   {code:'zh-hant', hreflang:'zh-Hant', endo:'繁體中文', en:'Chinese (Traditional)', dir:'ltr'},
   {code:'pa',      hreflang:'pa',      endo:'ਪੰਜਾਬੀ', en:'Punjabi', dir:'ltr'},
@@ -112,6 +114,23 @@ function hreflangs(variant, pageKey){
 }
 function mtnote(t, code){
   return code==='en' ? '' : `<div class="mtnote">${t['chrome.mtnote']}</div>`;
+}
+/* inline nav pickers (JS-free <details>) that sit INSIDE the menu row */
+function navLangpick(t, code, variant, pageKey){
+  const cur = LANGS.find(l=>l.code===code);
+  const items = LANGS.map(l=>{
+    const c = l.code===code ? ' aria-current="true"' : '';
+    return `<a href="${url(l.code,variant,pageKey)}" hreflang="${l.hreflang}" lang="${l.hreflang}"${l.dir==='rtl'?' dir="rtl"':''}${c}><span class="endo">${l.endo}</span><span class="en">${l.en}</span></a>`;
+  }).join('');
+  return `<details class="navpick lang"><summary><span class="globe" aria-hidden="true">\u{1F310}</span> ${cur.endo} <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu langgrid">${items}</div></details>`;
+}
+function navVpick(t, code, variant, pageKey){
+  const V = [['full',t['chrome.full']],['mobile',t['chrome.mobile']],['lite',t['chrome.lite']],['eink',t['chrome.eink']]];
+  const items = V.map(([v,label])=>{
+    const c = v===variant ? ' aria-current="true"' : '';
+    return `<a href="${url(code,v,pageKey)}"${c}>${label}</a>`;
+  }).join('');
+  return `<details class="navpick"><summary>${t['chrome.version']} <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu">${items}</div></details>`;
 }
 
 /* ============================================================================
@@ -849,7 +868,7 @@ ${aBand('')}
 /* ============================================================================
    shells
    ============================================================================ */
-function fullNav(t, code){
+function fullNav(t, code, pageKey){
   const u = (v,p)=>url(code,v,p); // full nav links to full pages in same lang
   const home = url(code,'full','home');
   return `<header class="topbar">
@@ -861,6 +880,8 @@ function fullNav(t, code){
       <div class="navmenu"><a href="${home}#plastics">${t['nav.plastics']} <span class="ar">→</span></a><a href="${home}#hex">${t['nav.hex']} <span class="ar">→</span></a></div></div>
     <div class="navgroup"><button class="navtop" type="button">${t['nav.process']} <span class="car">▾</span></button>
       <div class="navmenu"><a href="${u('full','process')}">${t['nav.ourprocess']} <span class="ar">→</span></a><a href="${u('full','recycling101')}">${t['nav.recycling101']} <span class="ar">→</span></a></div></div>
+    ${navVpick(t,code,'full',pageKey)}
+    ${navLangpick(t,code,'full',pageKey)}
   </nav>
 </header>`;
 }
@@ -900,23 +921,32 @@ function shellFull(code, pageKey){
 ${hreflangs('full','deck')}
 <style>
 ${DECK_CSS}
-/* language + version utility strip for translated decks */
-.uvbar{position:fixed;top:46px;left:0;right:0;z-index:99;display:flex;gap:10px;justify-content:flex-end;align-items:center;padding:5px 12px;background:#2b2723;color:var(--bone);border-bottom:2px solid var(--bone);font-size:11px}
-.uvbar a{color:var(--bone)}
-.uvbar .vswitch{display:flex;border:2px solid var(--bone)} .uvbar .vswitch a{padding:3px 8px;text-decoration:none;border-left:1px dashed var(--bone)} .uvbar .vswitch a:first-child{border-left:none} .uvbar .vswitch a[aria-current]{background:var(--bone);color:var(--ink);font-weight:700}
-.uvbar .langpick>summary{list-style:none;cursor:pointer;border:2px solid var(--bone);padding:3px 9px;display:flex;gap:6px;align-items:center} .uvbar .langpick>summary::-webkit-details-marker{display:none}
-.uvbar .langmenu{position:absolute;top:30px;inset-inline-end:12px;background:var(--ink);border:2px solid var(--bone);display:grid;grid-template-columns:1fr 1fr;min-width:220px;max-height:60vh;overflow:auto}
-.uvbar .langmenu a{padding:7px 10px;text-decoration:none;border-bottom:1px dashed var(--bone)} .uvbar .langmenu a[aria-current]{background:var(--bone);color:var(--ink)} .uvbar .langmenu a .en{display:block;font-size:9px;opacity:.6}
-.deck{padding-top:28px}
+/* inline language + version pickers in the deck chrome */
+.chrome .ctl{display:flex;align-items:stretch;height:46px}
+.chrome .navpick{position:relative;display:flex;align-items:stretch;border-left:2px solid var(--bone)}
+.chrome .navpick>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:0 12px;color:var(--bone);white-space:nowrap;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.chrome .navpick>summary::-webkit-details-marker{display:none}
+.chrome .navpick[open]>summary,.chrome .navpick>summary:hover{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu{display:none}
+.chrome .navpick[open] .navmenu{display:flex;flex-direction:column}
+.chrome .navpick .navmenu{position:absolute;top:46px;inset-inline-end:0;background:var(--ink);border:2px solid var(--bone);min-width:168px;z-index:110}
+.chrome .navpick.lang[open] .navmenu{display:grid;grid-template-columns:1fr 1fr;min-width:250px;max-height:70vh;overflow:auto}
+.chrome .navpick .navmenu a{color:var(--bone);padding:8px 11px;text-decoration:none;border-bottom:1px dashed #5c554c;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.chrome .navpick .navmenu a[aria-current]{background:var(--bone);color:var(--ink)}
+.chrome .navpick .navmenu a:hover{background:var(--teal);color:var(--ink)}
+.chrome .navpick.lang .navmenu a{border-right:1px dashed #5c554c}
+.chrome .navpick.lang .navmenu a:nth-child(even){border-right:none}
+.chrome .navpick .navmenu a .en{display:block;font-size:9px;opacity:.6;text-transform:none;letter-spacing:0}
+.chrome .mttag{align-self:center;border:1px solid var(--orange);color:var(--orange);font-size:9px;padding:2px 5px;letter-spacing:.1em;margin-inline-start:8px}
+@media(max-width:700px){.chrome .doc{display:none}}
 </style>
 </head>
 <body>
 <div class="chrome">
   <a href="${url(code,'full','home')}"><img src="/logo.svg" alt="Riposte Laboratories"> <span>← ${t['nav.home']}</span></a>
-  <span>${t['deck.title']}</span>
-  <span class="doc">DOC NO. RL-DECK-01 · Confidential</span>
+  <span class="doc">${t['deck.title']}${code!=='en'?`<span class="mttag" title="${t['chrome.mtnote']}">MT</span>`:''}</span>
+  <div class="ctl">${navVpick(t,code,'full','deck')}${navLangpick(t,code,'full','deck')}</div>
 </div>
-<div class="uvbar">${vswitch(t,code,'full','deck')}${langpick(t,code,'full','deck')}</div>
 <div class="prog" id="prog"></div>
 <main class="deck" id="deck">
 ${d.slides}
@@ -943,8 +973,8 @@ ${hreflangs('full',pageKey)}
 </head>
 <body>
 <a class="skip" href="#main">${t['chrome.skip']}</a>
-${utilbar(t,code,'full',pageKey)}
-${fullNav(t,code)}
+${fullNav(t,code,pageKey)}
+${code!=='en'?`<div class="mtbar">${t['chrome.mtnote']}</div>`:''}
 <main id="main">
 ${r.body}
 </main>

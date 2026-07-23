@@ -5,6 +5,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -22,6 +24,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -39,6 +43,46 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -56,6 +100,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -73,6 +119,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -90,6 +138,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -107,6 +157,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -124,6 +176,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -141,6 +195,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -158,6 +214,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -175,6 +233,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -192,6 +252,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -209,6 +271,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/"/>
@@ -226,6 +290,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -243,6 +309,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -260,6 +328,46 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/process/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/process/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/process/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/process/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/process/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/process/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/process/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/process/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/it/process/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/process/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/process/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/process/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/process/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/process/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/process/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/process/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/process/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/pl/process/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -277,6 +385,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -294,6 +404,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -311,6 +423,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -328,6 +442,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -345,6 +461,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -362,6 +480,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -379,6 +499,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -396,6 +518,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -413,6 +537,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -430,6 +556,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/process/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/process/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/process/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/process/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/process/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/process/"/>
@@ -447,6 +575,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -464,6 +594,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -481,6 +613,46 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/recycling101/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/it/recycling101/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/recycling101/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/pl/recycling101/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -498,6 +670,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -515,6 +689,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -532,6 +708,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -549,6 +727,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -566,6 +746,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -583,6 +765,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -600,6 +784,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -617,6 +803,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -634,6 +822,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -651,6 +841,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/recycling101/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/recycling101/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/recycling101/"/>
@@ -668,6 +860,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -685,6 +879,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -702,6 +898,46 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/deck/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/deck/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/deck/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/deck/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/deck/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/deck/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/it/deck/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ripostelabs.xyz/ko/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ripostelabs.xyz/ja/deck/"/>
+    <xhtml:link rel="alternate" hreflang="tl" href="https://ripostelabs.xyz/tl/deck/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ripostelabs.xyz/vi/deck/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ripostelabs.xyz/hi/deck/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ripostelabs.xyz/ar/deck/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://ripostelabs.xyz/fa/deck/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ripostelabs.xyz/deck/"/>
+  </url>
+  <url>
+    <loc>https://ripostelabs.xyz/pl/deck/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -719,6 +955,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -736,6 +974,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -753,6 +993,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -770,6 +1012,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -787,6 +1031,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -804,6 +1050,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -821,6 +1069,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -838,6 +1088,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -855,6 +1107,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
@@ -872,6 +1126,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ripostelabs.xyz/deck/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ripostelabs.xyz/fr/deck/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ripostelabs.xyz/es/deck/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://ripostelabs.xyz/it/deck/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://ripostelabs.xyz/pl/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://ripostelabs.xyz/zh-hans/deck/"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ripostelabs.xyz/zh-hant/deck/"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://ripostelabs.xyz/pa/deck/"/>
