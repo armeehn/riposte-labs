@@ -267,3 +267,29 @@ html.v-eink{--ink:#000;--bone:#fff;--bone-dim:#fff;--grid:#000;
   .flow{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- language picker + utility (mirrors site.css) ---------- */
+.utility{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.langpick{position:relative;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.langpick>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 11px;border:var(--rule);white-space:nowrap;font-weight:700}
+.langpick>summary::-webkit-details-marker{display:none}
+.langpick>summary .globe{font-size:13px}
+.langpick>summary .car{font-size:9px;opacity:.6}
+.langpick[open]>summary .car{transform:rotate(180deg)}
+.langmenu{position:absolute;top:100%;inset-inline-end:0;margin-top:2px;z-index:80;min-width:208px;max-height:60vh;overflow:auto;background:var(--bone);border:var(--rule);display:grid;grid-template-columns:1fr 1fr}
+.langmenu a{display:block;padding:9px 11px;text-decoration:none;border-bottom:1px dashed var(--grid);border-inline-start:1px dashed var(--grid)}
+.langmenu a:nth-child(odd){border-inline-start:none}
+.langmenu a[aria-current]{background:var(--ink);color:var(--bone);font-weight:700}
+.langmenu a:hover{background:var(--teal);color:var(--bone)}
+.langmenu a .en{display:block;font-size:9px;opacity:.55;letter-spacing:.04em}
+.topbar .mtnote{border-top:1px dashed var(--ink);padding:6px 0;text-align:center;font-size:11px;letter-spacing:.02em;opacity:.75}
+.v-mobile .langpick>summary{padding:9px 12px}
+.v-eink .langmenu a:hover{background:#000;color:#fff}
+
+/* ---------- right-to-left (Arabic, Farsi) for lightweight variants ---------- */
+[dir="rtl"] .sechead .rt{margin-left:0;margin-right:auto}
+[dir="rtl"] .vswitch a{border-left:none;border-right:1px dashed var(--ink)}
+[dir="rtl"] .vswitch a:first-child{border-right:none}
+[dir="rtl"] .note{border-left:0;border-right:8px solid var(--orange)}
+[dir="rtl"] .spec li::before,[dir="rtl"] .verdict li::before{margin-left:.25em}
+[dir="rtl"] .illus{border-left:0;border-right:4px solid var(--orange);padding:6px 12px 6px 0}
