@@ -19,9 +19,6 @@ h1,h2,h3{text-transform:uppercase;letter-spacing:.02em;line-height:1.12}
 b,strong{font-weight:700}
 ::selection{background:var(--pink);color:var(--bone)}
 
-.skip{position:absolute;left:-999px;top:auto}
-.skip:focus{left:8px;top:8px;z-index:200;background:var(--ink);color:var(--bone);padding:8px 12px;letter-spacing:.08em}
-
 .wrap{width:min(var(--measure),92vw);margin:0 auto}
 
 /* ---------- top bar + version switch ---------- */
@@ -41,7 +38,7 @@ b,strong{font-weight:700}
 .band.harlequin{height:30px;background:repeating-conic-gradient(from 45deg,var(--pink) 0 25%,var(--teal) 0 50%) 0 0/26px 26px}
 
 /* ---------- hero (home) ---------- */
-.hero{padding:44px 0 40px;border-bottom:var(--rule);text-align:center}
+.hero{padding:44px 20px 40px;border-bottom:var(--rule);text-align:center}
 .hero .wordmark{width:min(560px,86vw);margin:0 auto 14px}
 /* letter-spacing adds a trailing gap after the last letter; text-indent of the
    same size adds a matching leading gap so the glyph run stays truly centred */
@@ -63,7 +60,6 @@ b,strong{font-weight:700}
 .sec{padding:40px 0}
 .sechead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:var(--rule);padding-bottom:12px;margin-bottom:22px}
 .sechead h2{font-size:clamp(21px,4.6vw,32px);font-weight:800}
-.sechead .rt{margin-left:auto;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.55}
 .seclab{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;
   color:var(--bone);background:var(--ink);padding:3px 9px;vertical-align:middle}
 .seclab.c1{background:var(--pink)} .seclab.c2{background:var(--orange);color:var(--ink)} .seclab.c3{background:var(--teal)}
@@ -200,9 +196,9 @@ p{max-width:var(--measure)} p + p{margin-top:.85em}
 
 /* ---------- footnotes ---------- */
 .fnlist{list-style:none;counter-reset:fn;font-size:12px;margin-top:8px}
-.fnlist li{counter-increment:fn;position:relative;padding:9px 0 9px 28px;border-bottom:1px dashed var(--grid);line-height:1.5}
+.fnlist li{counter-increment:fn;position:relative;padding:9px 0;padding-inline-start:28px;border-bottom:1px dashed var(--grid);line-height:1.5}
 .fnlist li:last-child{border-bottom:none}
-.fnlist li::before{content:counter(fn);position:absolute;left:0;top:9px;font-weight:700;color:var(--pink)}
+.fnlist li::before{content:counter(fn);position:absolute;inset-inline-start:0;top:9px;font-weight:700;color:var(--pink)}
 .fnlist li a{font-weight:700;overflow-wrap:anywhere}
 sup.fn{font-size:.62em;font-weight:700;line-height:0;margin-left:1px}
 sup.fn a{color:var(--pink);text-decoration:none}
@@ -212,8 +208,6 @@ footer{border-top:var(--rule);margin-top:8px}
 footer .fnav{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;padding:16px 0;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 footer .fnav a{text-decoration:none;opacity:.8}
 footer .fnav a:hover{opacity:1}
-footer .fswitch{display:flex;flex-wrap:wrap;gap:8px}
-footer .fswitch a[aria-current]{font-weight:700;opacity:1;text-decoration:underline}
 footer .cr{border-top:1px dashed var(--grid);padding:12px 0;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
 
 /* ===========================================================================
@@ -231,7 +225,7 @@ footer .cr{border-top:1px dashed var(--grid);padding:12px 0;font-size:11px;lette
    =========================================================================== */
 .v-lite{--measure:60ch}
 .v-lite .band{height:auto;border-bottom:none;border-top:var(--rule);margin:2.4rem 0;background:none}
-.v-lite .hero{padding:32px 0 28px}
+.v-lite .hero{padding:32px 20px 28px}
 .v-lite .flow{grid-template-columns:repeat(2,1fr)}
 
 /* ===========================================================================
@@ -256,6 +250,8 @@ html.v-eink{--ink:#000;--bone:#fff;--bone-dim:#fff;--grid:#000;
 .v-eink .band{height:22px;background:repeating-conic-gradient(#000 0 25%,#fff 0 50%) 0 0/20px 20px;border-top:3px solid #000;border-bottom:3px solid #000}
 .v-eink .band.harlequin{height:26px;background:repeating-conic-gradient(from 45deg,#000 0 25%,#fff 0 50%) 0 0/24px 24px}
 .v-eink .vswitch a[aria-current]{background:#000;color:#fff}
+/* raise faint muted text so it stays legible on greyscale e-ink displays */
+.v-eink .dim,.v-eink .sectag,.v-eink .partner .p-n,.v-eink .partner .drops,.v-eink .toc a .n,.v-eink .spec .spec-h .doc,.v-eink .rail .yr .ph,.v-eink .code span,.v-eink .mtnote,.v-eink .stat .l{opacity:.85}
 
 /* ---------- responsive collapses (shared) ---------- */
 @media(max-width:640px){
@@ -287,9 +283,9 @@ html.v-eink{--ink:#000;--bone:#fff;--bone-dim:#fff;--grid:#000;
 .v-eink .langmenu a:hover{background:#000;color:#fff}
 
 /* ---------- right-to-left (Arabic, Farsi) for lightweight variants ---------- */
-[dir="rtl"] .sechead .rt{margin-left:0;margin-right:auto}
 [dir="rtl"] .vswitch a{border-left:none;border-right:1px dashed var(--ink)}
 [dir="rtl"] .vswitch a:first-child{border-right:none}
 [dir="rtl"] .note{border-left:0;border-right:8px solid var(--orange)}
-[dir="rtl"] .spec li::before,[dir="rtl"] .verdict li::before{margin-left:.25em}
+[dir="rtl"] .spec li::before{content:"\25C2 "}
 [dir="rtl"] .illus{border-left:0;border-right:4px solid var(--orange);padding:6px 12px 6px 0}
+[dir="rtl"] sup.fn{margin-left:0;margin-right:1px}

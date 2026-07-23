@@ -598,7 +598,7 @@ const HEX_ALT = `<svg viewBox="0 0 240 250" fill="none" stroke="currentColor" ar
   <text x="120" y="234" fill="currentColor" stroke="none" font-size="8.5" text-anchor="middle" font-family="monospace">6 &#215; 2.41 Wh &#183; 45 &#215; 13 mm cells</text>
 </svg>`;
 function aSechead(sec, cN, h, tag){
-  return `<div class="sechead"><span class="seclab ${cN}">${sec}</span><h2>${h}</h2><span class="rt">${tag}</span></div><p class="sectag">${tag}</p>`;
+  return `<div class="sechead"><span class="seclab ${cN}">${sec}</span><h2>${h}</h2></div><p class="sectag">${tag}</p>`;
 }
 function aSpec(head, doc, cN, lis){
   return `<div class="spec ${cN}"><div class="spec-h"><span>${head}</span><span class="doc">${doc}</span></div><ul>${lis.map(l=>`<li>${l}</li>`).join('')}</ul></div>`;
