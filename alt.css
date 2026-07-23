@@ -43,7 +43,10 @@ b,strong{font-weight:700}
 /* ---------- hero (home) ---------- */
 .hero{padding:44px 0 40px;border-bottom:var(--rule);text-align:center}
 .hero .wordmark{width:min(560px,86vw);margin:0 auto 14px}
-.hero .eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase}
+/* letter-spacing adds a trailing gap after the last letter; text-indent of the
+   same size adds a matching leading gap so the glyph run stays truly centred */
+.hero .eyebrow{font-size:12px;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;opacity:.85}
+@media(max-width:520px){.hero .eyebrow{letter-spacing:.24em;text-indent:.24em;font-size:11px}}
 .hero h1{margin-top:20px;font-size:clamp(22px,5.4vw,32px);font-weight:800}
 .hero h1 .p{opacity:.5}
 .hero .sub{margin:14px auto 0;max-width:54ch;font-size:14px;opacity:.9}
