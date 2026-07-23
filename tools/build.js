@@ -221,7 +221,7 @@ function fullHome(t){
     body: `
 <div class="hero">
   <span class="corner tl">RIPOSTE LABORATORIES INC.</span>
-  <span class="corner tr">EST. 2026</span>
+  <span class="corner tr">EST. 2025</span>
   <span class="corner bl">DOC NO. RL-000-A</span>
   <span class="corner br">REV. A</span>
   <canvas id="sig" class="sig" aria-hidden="true"></canvas>
