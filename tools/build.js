@@ -972,7 +972,6 @@ ${hreflangs('full',pageKey)}
 <link rel="stylesheet" href="/site.css">
 </head>
 <body>
-<a class="skip" href="#main">${t['chrome.skip']}</a>
 ${fullNav(t,code,pageKey)}
 ${code!=='en'?`<div class="mtbar">${t['chrome.mtnote']}</div>`:''}
 <main id="main">
@@ -1007,7 +1006,6 @@ ${hreflangs(variant,pageKey)}
 <link rel="stylesheet" href="/alt.css">
 </head>
 <body>
-<a class="skip" href="#main">${t['chrome.skip']}</a>
 <header class="topbar">
   <div class="wrap bar">
     <a class="brand" href="${url(code,variant,'home')}"><img src="/logo.svg" alt="Riposte Laboratories" width="100"><span>Laboratories&nbsp;Inc.</span></a>
