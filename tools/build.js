@@ -920,6 +920,8 @@ function shellFull(code, pageKey){
 <html lang="${L.hreflang}"${dirAttr}>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Riposte Laboratories · ${t['deck.title']}</title>
 <link rel="canonical" href="${url(code,'full','deck')}">
@@ -969,6 +971,8 @@ ${d.slides}
 <html lang="${L.hreflang}"${dirAttr}>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${pageTitle(t,pageKey)}</title>
 <meta name="description" content="${pageDesc(t,pageKey)}">
@@ -1003,6 +1007,8 @@ function shellAlt(code, variant, pageKey){
 <html lang="${L.hreflang}" class="${VCLASS[variant]}"${dirAttr}>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${pageTitle(t,pageKey)}</title>
 <meta name="description" content="${pageDesc(t,pageKey)}">
