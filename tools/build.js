@@ -154,6 +154,18 @@ function navVpick(t, code, variant, pageKey){
   }).join('');
   return `<details class="navpick"><summary>${t['chrome.version']} <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu">${items}</div></details>`;
 }
+/* full-site topbar version + language: hover/click navgroups matching the rest
+   (picked up by NAV_JS for click/keyboard/aria, unlike a bare <details>) */
+function fnavVersion(t, code, pageKey){
+  const V = [['full',t['chrome.full']],['mobile',t['chrome.mobile']],['lite',t['chrome.lite']],['eink',t['chrome.eink']]];
+  const items = V.map(([v,label])=>`<a href="${url(code,v,pageKey)}"${v==='full'?' aria-current="true"':''}>${label}</a>`).join('');
+  return `<div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-version">${t['chrome.version']} <span class="car" aria-hidden="true">▾</span></button><div class="navmenu" id="navmenu-version">${items}</div></div>`;
+}
+function fnavLang(t, code, pageKey){
+  const cur = LANGS.find(l=>l.code===code);
+  const items = LANGS.map(l=>`<a href="${url(l.code,'full',pageKey)}" hreflang="${l.hreflang}" lang="${l.hreflang}"${l.dir==='rtl'?' dir="rtl"':''}${l.code===code?' aria-current="true"':''}><span class="endo">${l.endo}</span><span class="en">${l.en}</span></a>`).join('');
+  return `<div class="navgroup langnav"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-lang"><span class="globe" aria-hidden="true">\u{1F310}</span> ${cur.endo} <span class="car" aria-hidden="true">▾</span></button><div class="navmenu langgrid" id="navmenu-lang">${items}</div></div>`;
+}
 
 /* ============================================================================
    shared block builders (identical markup for full + alt; classes exist in both)
@@ -902,8 +914,8 @@ function fullNav(t, code, pageKey){
       <div class="navmenu" id="navmenu-projects"><a href="${home}#plastics">${t['nav.plastics']} <span class="ar" aria-hidden="true">→</span></a><a href="${home}#hex">${t['nav.hex']} <span class="ar" aria-hidden="true">→</span></a></div></div>
     <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-process">${t['nav.process']} <span class="car" aria-hidden="true">▾</span></button>
       <div class="navmenu" id="navmenu-process"><a href="${u('full','process')}">${t['nav.ourprocess']} <span class="ar" aria-hidden="true">→</span></a><a href="${u('full','recycling101')}">${t['nav.recycling101']} <span class="ar" aria-hidden="true">→</span></a></div></div>
-    ${navVpick(t,code,'full',pageKey)}
-    ${navLangpick(t,code,'full',pageKey)}
+    ${fnavVersion(t,code,pageKey)}
+    ${fnavLang(t,code,pageKey)}
   </nav>
 </header>`;
 }

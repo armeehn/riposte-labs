@@ -472,3 +472,21 @@ section.mat{padding:8px 0 56px;scroll-margin-top:120px}
 [dir="rtl"] .uwrap{justify-content:flex-start}
 [dir="rtl"] .utilbar .vswitch a{border-left:none;border-right:1px dashed var(--ink)}
 [dir="rtl"] .utilbar .vswitch a:first-child{border-right:none}
+
+/* ---------- language + version dropdowns: navgroups matching the rest ---------- */
+.navtop .globe{font-size:13px}
+.langnav .navmenu{min-width:264px}
+.navgroup.langnav:hover .navmenu.langgrid,.navgroup.langnav:focus-within .navmenu.langgrid,.navgroup.langnav.open .navmenu.langgrid{display:grid;grid-template-columns:1fr 1fr;max-height:min(72vh,420px);overflow:auto}
+.langgrid a{flex-direction:column;align-items:flex-start;gap:1px;border-right:1px dashed var(--ink)}
+.langgrid a:nth-child(even){border-right:none}
+.langgrid a .en{font-size:9px;opacity:.55;letter-spacing:.02em;text-transform:none}
+.langgrid a[aria-current] .en{opacity:.85}
+
+/* ---------- slim machine-translation bar under the header ---------- */
+.mtbar{background:var(--bone-dim);border-bottom:var(--rule);text-align:center;font-size:11px;letter-spacing:.03em;padding:6px 12px;opacity:.85}
+
+@media(max-width:820px){
+  .langnav .navmenu.langgrid{display:grid;grid-template-columns:1fr 1fr}
+}
+[dir="rtl"] .langgrid a{border-right:none;border-left:1px dashed var(--ink)}
+[dir="rtl"] .langgrid a:nth-child(even){border-left:none}
