@@ -26,13 +26,13 @@
 <style>
 :root{
   --ink:#1d1a17; --pink:#f0477d; --orange:#fe9a0d; --teal:#12b795;
-  --bone:#f6f1e7; --bone-dim:#eae4d6; --rule:2px solid var(--ink);
+  --bone:#f6f1e7; --bone-dim:#eae4d6; --rule:2px solid var(--ink); --pink-tx:#b81e58; --teal-tx:#0c7a63; --orange-tx:#9c5d00;
   --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--mono);background:var(--ink);color:var(--ink);-webkit-font-smoothing:antialiased}
-::selection{background:var(--pink);color:var(--bone)}
+::selection{background:var(--pink);color:var(--ink)}
 
 /* ---- fixed chrome ---- */
 .chrome{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;display:flex;
@@ -51,12 +51,12 @@ body{font-family:var(--mono);background:var(--ink);color:var(--ink);-webkit-font
 .pager button:hover{background:var(--pink);border-color:var(--pink)}
 
 /* ---- deck / slides ---- */
-.deck{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory;scroll-behavior:smooth}
+.deck{height:100vh;overflow-y:scroll;scroll-snap-type:y proximity;scroll-behavior:smooth}
 .slide{position:relative;min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;
   justify-content:center;padding:clamp(30px,6vw,96px);padding-top:clamp(66px,8vw,96px);
-  background:var(--bone);border-bottom:var(--rule);overflow:hidden}
+  background:var(--bone);border-bottom:var(--rule);overflow-x:hidden}
 .slide.dark{background:var(--ink);color:var(--bone)}
-.slide.pink{background:var(--pink);color:var(--bone)}
+.slide.pink{background:var(--pink);color:var(--ink)}
 
 /* top checker accent */
 .slide::before{content:"";position:absolute;top:46px;left:0;right:0;height:10px;
@@ -70,14 +70,14 @@ body{font-family:var(--mono);background:var(--ink);color:var(--ink);-webkit-font
 .chip{background:var(--ink);color:var(--bone);padding:3px 9px;letter-spacing:.1em}
 .dark .chip{background:var(--teal)}
 .pink .chip{background:var(--ink)}
-.chip.pink{background:var(--pink)}.chip.orange{background:var(--orange);color:var(--ink)}.chip.teal{background:var(--teal)}
+.chip.pink{background:var(--pink);color:var(--ink)}.chip.orange{background:var(--orange);color:var(--ink)}.chip.teal{background:var(--teal);color:var(--ink)}
 h1{font-size:clamp(30px,6.6vw,74px);line-height:1.02;letter-spacing:-.01em;font-weight:800;max-width:16ch}
-h1 .hl{color:var(--pink)}.dark h1 .hl{color:var(--teal)}.pink h1 .hl{color:var(--orange)}
+h1 .hl{color:var(--pink)}.dark h1 .hl{color:var(--teal)}.pink h1 .hl{color:var(--ink)}
 h2{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:-.01em}
 p{font-size:clamp(14px,1.5vw,18px);line-height:1.6;max-width:60ch;margin-top:16px}
 p.big{font-size:clamp(16px,2vw,22px);max-width:52ch}
 .dim{opacity:.62}
-b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .hi{color:var(--orange)}
+b .hi,.hi{color:var(--pink-tx);font-weight:800}.dark .hi{color:var(--teal)}.pink .hi{color:var(--ink)}
 .tag{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
 
 /* layout helpers */
@@ -90,7 +90,8 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
 .stat{border:var(--rule);background:var(--bone);padding:20px 18px}
 .dark .stat{background:#241f1b;border-color:var(--bone)}
 .stat .n{font-size:clamp(26px,4vw,44px);font-weight:800;line-height:1;letter-spacing:-.02em}
-.stat .n.pink{color:var(--pink)}.stat .n.orange{color:var(--orange)}.stat .n.teal{color:var(--teal)}
+.stat .n.pink{color:var(--pink-tx)}.stat .n.orange{color:var(--orange-tx)}.stat .n.teal{color:var(--teal-tx)}
+.dark .stat .n.pink{color:var(--pink)}.dark .stat .n.orange{color:var(--orange)}.dark .stat .n.teal{color:var(--teal)}
 .stat .l{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-top:12px;opacity:.8;line-height:1.5}
 
 /* spec list (site style) */
@@ -99,12 +100,12 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
 .spec-h{display:flex;justify-content:space-between;gap:10px;background:var(--ink);color:var(--bone);
   padding:9px 14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
 .dark .spec-h{background:#2b2723;border-bottom:2px solid var(--bone)}
-.spec.tealhd .spec-h{background:var(--teal)}.spec.orangehd .spec-h{background:var(--orange);color:var(--ink)}
+.spec.tealhd .spec-h{background:var(--teal);color:var(--ink)}.spec.orangehd .spec-h{background:var(--orange);color:var(--ink)}
 .spec ul{list-style:none;padding:8px 14px 12px}
 .spec li{padding:8px 0;border-bottom:1px dashed var(--ink);font-size:13.5px;line-height:1.45}
 .dark .spec li{border-bottom-color:#5c554c}
 .spec li:last-child{border-bottom:none}
-.spec li::before{content:"▸ ";color:var(--pink);font-weight:800}.dark .spec li::before{color:var(--teal)}
+.spec li::before{content:"▸ ";color:var(--pink-tx);font-weight:800}.dark .spec li::before{color:var(--teal)}
 
 /* flow (loop) */
 .flow{display:flex;gap:0;flex-wrap:wrap;margin-top:30px}
@@ -112,7 +113,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
   margin-right:24px;background:var(--bone);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
 .dark .flow .step{background:#241f1b;border-color:var(--bone)}
 .flow .step:last-child{margin-right:0}
-.flow .step::after{content:"→";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:800;color:var(--pink)}
+.flow .step::after{content:"→";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:800;color:var(--pink-tx)}
 .dark .flow .step::after{color:var(--teal)}
 .flow .step:last-child::after{content:none}
 .flow .step b{display:block;font-size:20px;margin-bottom:5px}
@@ -129,7 +130,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
 .marq .r{background:var(--orange);color:var(--ink);padding:0 .4em}
 
 /* misc */
-.stamp{display:inline-block;margin-top:22px;border:2px solid var(--orange);color:var(--orange);
+.stamp{display:inline-block;margin-top:22px;border:2px solid var(--orange);color:var(--orange-tx);
   padding:7px 12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1.4deg)}
 .tbd{border:2px dashed currentColor;padding:14px 16px;margin-top:14px;opacity:.95}
 .tbd .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
@@ -139,9 +140,9 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
 .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .pill{border:var(--rule);padding:7px 12px;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
 .dark .pill{border-color:var(--bone)}
-.bigmail{display:inline-block;margin-top:24px;border:2px solid var(--bone);color:var(--bone);
+.bigmail{display:inline-block;margin-top:24px;border:2px solid var(--ink);color:var(--ink);
   padding:16px 22px;text-decoration:none;font-size:clamp(15px,2.2vw,22px);font-weight:800;letter-spacing:.03em;transition:.15s}
-.bigmail:hover{background:var(--bone);color:var(--ink)}
+.bigmail:hover{background:var(--ink);color:var(--bone)}
 .usebars{margin-top:20px;display:flex;flex-direction:column;gap:10px;max-width:52ch}
 .usebars .row{display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;font-size:13px}
 .usebars .bar{height:16px;background:#241f1b;border:2px solid var(--bone);position:relative}
@@ -158,7 +159,7 @@ b .hi,.hi{color:var(--pink);font-weight:800}.dark .hi{color:var(--teal)}.pink .h
 
 /* footnotes */
 sup.fn{font-size:.6em;font-weight:800;line-height:0;margin-left:1px}
-sup.fn a{color:var(--pink);text-decoration:none}
+sup.fn a{color:var(--pink-tx);text-decoration:underline}
 .dark sup.fn a{color:var(--teal)}.pink sup.fn a{color:var(--ink)}
 sup.fn a:hover{text-decoration:underline}
 .slide.sources{justify-content:flex-start;padding-top:clamp(70px,9vw,96px);overflow-y:auto}
@@ -167,7 +168,7 @@ ol.fnlist{list-style:none;counter-reset:fn;margin-top:22px;columns:2;column-gap:
 ol.fnlist li{counter-increment:fn;position:relative;padding:8px 0 8px 26px;
   border-bottom:1px dashed #5c554c;font-size:11.5px;line-height:1.45;break-inside:avoid}
 ol.fnlist li::before{content:counter(fn);position:absolute;left:0;top:8px;font-weight:800;color:var(--teal)}
-ol.fnlist li a{color:var(--bone);font-weight:700;overflow-wrap:anywhere}
+ol.fnlist li a{color:var(--bone);text-decoration:underline;font-weight:700;overflow-wrap:anywhere}
 ol.fnlist li:target{background:#2b2723}
 
 /* print => one slide per page */
@@ -179,6 +180,12 @@ ol.fnlist li:target{background:#2b2723}
   .slide::before{top:0}
   @page{size:1280px 720px;margin:0}
 }
+@media(prefers-reduced-motion:reduce){
+  html,.deck{scroll-behavior:auto}
+  .deck{scroll-snap-type:none}
+  .slide,.prog{transition:none}
+}
+
 /* inline language + version pickers in the deck chrome */
 .chrome .ctl{display:flex;align-items:stretch;height:46px}
 .chrome .navpick{position:relative;display:flex;align-items:stretch;border-left:2px solid var(--bone)}
@@ -251,7 +258,7 @@ ol.fnlist li:target{background:#2b2723}
   <section class="slide dark">
     <div class="kicker"><span class="chip ">SEC.05</span> Produit phare : Project HEX <span class="tag">// project hex &#183; énergie modulaire récupérée</span></div>
     <div class="cols">
-      <div style="display:grid;place-items:center"><svg style="width:min(360px,80vw)" viewBox="0 0 300 300" fill="none" aria-label="HEX unit: hexagon with six edge-mounted cylindrical cells, a solar top face, and an optional magnetic screen">
+      <div style="display:grid;place-items:center"><svg style="width:min(360px,80vw)" role="img" viewBox="0 0 300 300" fill="none" aria-label="HEX unit: hexagon with six edge-mounted cylindrical cells, a solar top face, and an optional magnetic screen">
             <!-- sun -->
             <g stroke="#fe9a0d" stroke-width="2">
               <circle cx="266" cy="34" r="11" fill="#fe9a0d" stroke="none"/>
@@ -336,7 +343,7 @@ ol.fnlist li:target{background:#2b2723}
     <div class="kicker"><span class="chip ">SEC.06</span> La vision <span class="tag">// une peau qui s'autorecharge</span></div>
     <h1>Les hexagones pavent le plan. Alors nous <span class="hi">habillons la maison entière.</span></h1>
     <div class="cols">
-      <div style="display:grid;place-items:center"><svg style="width:min(440px,88vw)" viewBox="0 0 400 240" fill="none" style="width:min(440px,88vw)" aria-label="geodesic dome clad in tessellating hexagonal HEX tiles">
+      <div style="display:grid;place-items:center"><svg style="width:min(440px,88vw)" role="img" viewBox="0 0 400 240" fill="none" style="width:min(440px,88vw)" aria-label="geodesic dome clad in tessellating hexagonal HEX tiles">
           <defs><clipPath id="domeclip"><path d="M80,192 A120,120 0 0 1 320,192 Z"/></clipPath></defs>
           <g stroke="#fe9a0d" stroke-width="2"><circle cx="352" cy="40" r="12" fill="#fe9a0d" stroke="none"/>
             <line x1="352" y1="16" x2="352" y2="8"/><line x1="330" y1="40" x2="322" y2="40"/><line x1="336" y1="24" x2="330" y2="18"/><line x1="368" y1="24" x2="374" y2="18"/></g>
@@ -446,7 +453,7 @@ ol.fnlist li:target{background:#2b2723}
   <section class="slide pink cover">
     <img src="/logo.svg" alt="Riposte Laboratories">
     <div class="lede">Parez le déchet. <span class="hi">Ripostez avec du produit.</span></div>
-    <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+    <a class="bigmail" href="mailto:esh@ripostelabs.xyz"><span aria-hidden="true">✉</span> esh@ripostelabs.xyz</a>
     <p class="dim" style="margin-top:26px;font-size:12px;letter-spacing:.1em">RIPOSTE LABORATORIES INC. &#183; CONFIDENTIEL &#183; 2026</p>
   </section>
   <section class="slide dark sources" id="sources">
@@ -456,7 +463,7 @@ ol.fnlist li:target{background:#2b2723}
     <p class="illus">Les prix sont des chiffres publiés indicatifs au moment de la recherche de juillet 2026, pas des devis ; les conditions d'acceptation de l'entreprise doivent être confirmées directement.</p>
   </section>
 </main>
-<div class="pager"><span class="count" id="count">01 / 15</span><button id="prev" aria-label="previous slide">‹</button><button id="next" aria-label="next slide">›</button></div>
+<div class="pager"><span class="count" id="count" aria-live="polite" aria-atomic="true">01 / 15</span><button id="prev" aria-label="previous slide">‹</button><button id="next" aria-label="next slide">›</button></div>
 <script>(function(){
   var deck=document.getElementById('deck');
   var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
@@ -478,8 +485,14 @@ ol.fnlist li:target{background:#2b2723}
   document.getElementById('next').addEventListener('click',function(){go(idx+1);});
   document.getElementById('prev').addEventListener('click',function(){go(idx-1);});
   document.addEventListener('keydown',function(e){
-    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(idx+1);}
-    else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(idx-1);}
+    // Don't hijack keys aimed at focused controls, or with modifiers held.
+    var t=e.target;
+    if(t&&(/^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(t.tagName)||t.isContentEditable))return;
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    // Horizontal + paging keys change slides; Up/Down/Space/scroll stay native so
+    // tall slides (e.g. at zoom) can be scrolled and focused controls still work.
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(idx+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1);}
     else if(e.key==='Home'){e.preventDefault();go(0);}
     else if(e.key==='End'){e.preventDefault();go(total-1);}
   });

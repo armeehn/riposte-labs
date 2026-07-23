@@ -33,6 +33,23 @@ const SIG_JS = A('sig.js');
 const DECK_JS = A('deck.js');
 const DECK_CSS = A('deck.css');
 
+/* Accessible disclosure behaviour for the dropdown nav: keeps hover/focus open,
+   syncs aria-expanded, adds click toggle (touch) and Escape-to-close. */
+const NAV_JS = `(function(){
+  var groups=document.querySelectorAll('.mainnav .navgroup');
+  Array.prototype.forEach.call(groups,function(g){
+    var btn=g.querySelector('.navtop'), menu=g.querySelector('.navmenu');
+    if(!btn||!menu)return;
+    function set(open){ btn.setAttribute('aria-expanded',open?'true':'false'); g.classList.toggle('open',open); }
+    btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
+    g.addEventListener('focusin',function(){ set(true); });
+    g.addEventListener('focusout',function(e){ if(!g.contains(e.relatedTarget)) set(false); });
+    g.addEventListener('mouseenter',function(){ set(true); });
+    g.addEventListener('mouseleave',function(){ if(!g.contains(document.activeElement)) set(false); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Escape'){ set(false); btn.focus(); } });
+  });
+})();`;
+
 /* ---- languages (code = dir name; hreflang = BCP-47; dir = ltr|rtl) ---- */
 const LANGS = [
   {code:'en',      hreflang:'en',      endo:'English',      en:'English',              dir:'ltr'},
@@ -256,7 +273,7 @@ ${MARQUEE}
 <section class="sec contact" id="contact">
   ${fSechead('SEC.05','tealno',S('home.contact.h'),S('home.contact.tag'))}
   <p class="lead">${S('home.contact.lead')}</p>
-  <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+  <a class="bigmail" href="mailto:esh@ripostelabs.xyz"><span aria-hidden="true">✉</span> esh@ripostelabs.xyz</a>
 </section>
 <section class="sec sources" id="sources">
   ${fSechead('REF','',S('sources.h'),S('sources.tag'))}
@@ -577,7 +594,7 @@ function fullDeck(t){
   <section class="slide pink cover">
     <img src="/logo.svg" alt="Riposte Laboratories">
     <div class="lede">${S('deck.close.lede')}</div>
-    <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+    <a class="bigmail" href="mailto:esh@ripostelabs.xyz"><span aria-hidden="true">✉</span> esh@ripostelabs.xyz</a>
     <p class="dim" style="margin-top:26px;font-size:12px;letter-spacing:.1em">${S('deck.close.foot')}</p>
   </section>
   <section class="slide dark sources" id="sources">
@@ -653,7 +670,7 @@ ${aBand('')}
 <section class="sec wrap" id="contact">
   ${aSechead('SEC.05','c3',S('home.contact.h'),S('home.contact.tag'))}
   <p class="lead">${S('home.contact.lead')}</p>
-  <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+  <a class="bigmail" href="mailto:esh@ripostelabs.xyz"><span aria-hidden="true">✉</span> esh@ripostelabs.xyz</a>
 </section>
 ${aBand('')}
 <section class="sec wrap" id="sources">
@@ -862,7 +879,7 @@ ${aBand('')}
   <p class="illus">${S('deck.ask.illus')}</p></section>
 ${aBand('')}
 <section class="sec wrap">${aSechead('SEC.13','c1',S('deck.close.h'),S('deck.close.tag'))}
-  <a class="bigmail" href="mailto:esh@ripostelabs.xyz">✉ esh@ripostelabs.xyz</a>
+  <a class="bigmail" href="mailto:esh@ripostelabs.xyz"><span aria-hidden="true">✉</span> esh@ripostelabs.xyz</a>
   <p class="dim">${S('deck.close.foot')}</p></section>
 ${aBand('')}
 <section class="sec wrap" id="sources">${aSechead('APPENDIX','c2',S('deck.sources.h'),S('sources.tag'))}
@@ -879,12 +896,12 @@ function fullNav(t, code, pageKey){
   return `<header class="topbar">
   <a class="brand" href="${home}"><div class="mark"><img src="/logo.svg" alt="Riposte Laboratories" width="110"></div><span>Laboratories&nbsp;Inc.</span></a>
   <nav class="mainnav">
-    <div class="navgroup"><button class="navtop" type="button">${t['nav.company']} <span class="car">▾</span></button>
-      <div class="navmenu"><a href="${home}#mission">${t['nav.mission']} <span class="ar">→</span></a><a href="${home}#esh">${t['nav.esh']} <span class="ar">→</span></a><a href="${home}#contact">${t['nav.contact']} <span class="ar">→</span></a></div></div>
-    <div class="navgroup"><button class="navtop" type="button">${t['nav.projects']} <span class="car">▾</span></button>
-      <div class="navmenu"><a href="${home}#plastics">${t['nav.plastics']} <span class="ar">→</span></a><a href="${home}#hex">${t['nav.hex']} <span class="ar">→</span></a></div></div>
-    <div class="navgroup"><button class="navtop" type="button">${t['nav.process']} <span class="car">▾</span></button>
-      <div class="navmenu"><a href="${u('full','process')}">${t['nav.ourprocess']} <span class="ar">→</span></a><a href="${u('full','recycling101')}">${t['nav.recycling101']} <span class="ar">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-company">${t['nav.company']} <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-company"><a href="${home}#mission">${t['nav.mission']} <span class="ar" aria-hidden="true">→</span></a><a href="${home}#esh">${t['nav.esh']} <span class="ar" aria-hidden="true">→</span></a><a href="${home}#contact">${t['nav.contact']} <span class="ar" aria-hidden="true">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-projects">${t['nav.projects']} <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-projects"><a href="${home}#plastics">${t['nav.plastics']} <span class="ar" aria-hidden="true">→</span></a><a href="${home}#hex">${t['nav.hex']} <span class="ar" aria-hidden="true">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-process">${t['nav.process']} <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-process"><a href="${u('full','process')}">${t['nav.ourprocess']} <span class="ar" aria-hidden="true">→</span></a><a href="${u('full','recycling101')}">${t['nav.recycling101']} <span class="ar" aria-hidden="true">→</span></a></div></div>
     ${navVpick(t,code,'full',pageKey)}
     ${navLangpick(t,code,'full',pageKey)}
   </nav>
@@ -958,7 +975,7 @@ ${DECK_CSS}
 <main class="deck" id="deck">
 ${d.slides}
 </main>
-<div class="pager"><span class="count" id="count">01 / ${String(d.count).padStart(2,'0')}</span><button id="prev" aria-label="previous slide">‹</button><button id="next" aria-label="next slide">›</button></div>
+<div class="pager"><span class="count" id="count" aria-live="polite" aria-atomic="true">01 / ${String(d.count).padStart(2,'0')}</span><button id="prev" aria-label="previous slide">‹</button><button id="next" aria-label="next slide">›</button></div>
 <script>${DECK_JS}</script>
 </body>
 </html>`;
@@ -987,7 +1004,8 @@ ${code!=='en'?`<div class="mtbar">${t['chrome.mtnote']}</div>`:''}
 ${r.body}
 </main>
 ${footer(t,code,'full',pageKey)}
-${r.scripts||''}
+<script>${NAV_JS}</script>
+
 </body>
 </html>`;
 }

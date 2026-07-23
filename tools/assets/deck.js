@@ -19,8 +19,14 @@
   document.getElementById('next').addEventListener('click',function(){go(idx+1);});
   document.getElementById('prev').addEventListener('click',function(){go(idx-1);});
   document.addEventListener('keydown',function(e){
-    if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(e.key)>-1){e.preventDefault();go(idx+1);}
-    else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(e.key)>-1){e.preventDefault();go(idx-1);}
+    // Don't hijack keys aimed at focused controls, or with modifiers held.
+    var t=e.target;
+    if(t&&(/^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(t.tagName)||t.isContentEditable))return;
+    if(e.metaKey||e.ctrlKey||e.altKey)return;
+    // Horizontal + paging keys change slides; Up/Down/Space/scroll stay native so
+    // tall slides (e.g. at zoom) can be scrolled and focused controls still work.
+    if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(idx+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(idx-1);}
     else if(e.key==='Home'){e.preventDefault();go(0);}
     else if(e.key==='End'){e.preventDefault();go(total-1);}
   });
