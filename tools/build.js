@@ -217,7 +217,7 @@ const MARQUEE = (()=>{
 function fullHome(t){
   const S = k => t[k];
   return {
-    scripts: `<script>${SIG_JS}</script>`,
+    scripts: `<script>${SIG_JS}</script>\n<script type="module" src="/tagline.js?v=${V_TAG}"></script>`,
     body: `
 <div class="hero">
   <span class="corner tl">RIPOSTE LABORATORIES INC.</span>
@@ -231,6 +231,7 @@ function fullHome(t){
     <h1><span class="p">${S('home.h1a')}</span> ${S('home.h1b')}</h1>
     <p class="sub">${S('home.sub')}</p>
     <a class="cta" href="#mission">${S('home.cta')} ↓</a>
+    <canvas id="tagline" class="tagline" aria-hidden="true"></canvas>
   </div>
 </div>
 ${MARQUEE}
@@ -1071,6 +1072,79 @@ ${body}
 /* ============================================================================
    emit
    ============================================================================ */
+/* ---- multilingual hero tagline drawn on canvas, laid out with pretext ---- */
+function taglineData(){
+  const codes = ['en','fr','es','it','zh-hans','ja','ko','ar','hi','pa','vi'];
+  const strip = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#39;|&rsquo;/g,"'").replace(/&quot;/g,'"').replace(/\s+/g,' ').trim();
+  const seen = new Set(), out = [];
+  for(const code of codes){
+    const L = LANGS.find(l=>l.code===code); if(!L) continue;
+    const txt = strip(loadStrings(code)['deck.cover.lede']);
+    if(txt && !seen.has(txt)){ seen.add(txt); out.push({t:txt, dir:L.dir}); }
+  }
+  return out;
+}
+function taglineJS(){
+  const phrases = JSON.stringify(taglineData());
+  return `/* Multilingual hero tagline rendered on <canvas>, laid out with
+   @chenglou/pretext (MIT). Canvas has no auto-layout, so text must be measured
+   to be centred and fit; pretext measures cross-script width without touching
+   the DOM. Decorative, aria-hidden, and degrades gracefully. */
+import { prepare, measureNaturalWidth } from '/pretext/layout.js';
+(function(){
+  var canvas = document.getElementById('tagline');
+  if(!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var PHRASES = ${phrases};
+  if(!PHRASES.length) return;
+  var fam = getComputedStyle(document.body).fontFamily || 'monospace';
+  var color = getComputedStyle(document.body).color || '#1d1a17';
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dpr = Math.min(window.devicePixelRatio || 1, 2);
+  var cssW = 0, cssH = 0, idx = 0, alpha = 0, phase = 'in', hold = 0, BASE = 100;
+  function fontSizeFor(text){
+    try{
+      var w = measureNaturalWidth(prepare(text, BASE + 'px ' + fam));
+      if(!(w > 0)) return null;
+      return Math.max(11, Math.min(Math.min(30, cssH * 0.82), BASE * (cssW * 0.96) / w));
+    }catch(e){ return null; }
+  }
+  function draw(a){
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
+    var ph = PHRASES[idx], fs = fontSizeFor(ph.t);
+    if(fs == null) return;
+    ctx.globalAlpha = Math.max(0, Math.min(1, a)) * 0.9;
+    ctx.fillStyle = color;
+    ctx.font = fs + 'px ' + fam;
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    try{ ctx.direction = ph.dir || 'ltr'; }catch(e){}
+    ctx.fillText(ph.t, cssW / 2, cssH / 2 + 1);
+  }
+  function resize(){
+    cssW = canvas.clientWidth; cssH = canvas.clientHeight;
+    canvas.width = Math.round(cssW * dpr); canvas.height = Math.round(cssH * dpr);
+    draw(alpha);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  if(reduced || PHRASES.length < 2){ alpha = 1; draw(1); return; }
+  var prev = 0;
+  function tick(ts){
+    if(!prev) prev = ts; var dt = ts - prev; prev = ts;
+    if(phase === 'in'){ alpha += dt / 500; if(alpha >= 1){ alpha = 1; phase = 'hold'; hold = ts + 2600; } }
+    else if(phase === 'hold'){ if(ts >= hold) phase = 'out'; }
+    else { alpha -= dt / 500; if(alpha <= 0){ alpha = 0; idx = (idx + 1) % PHRASES.length; phase = 'in'; } }
+    draw(alpha);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+`;
+}
+const TAGLINE_SRC = taglineJS();
+const V_TAG = crypto.createHash('md5').update(TAGLINE_SRC).digest('hex').slice(0, 8);
+
 function write(file, html){
   fs.mkdirSync(path.dirname(file), {recursive:true});
   fs.writeFileSync(file, html);
@@ -1104,7 +1178,7 @@ function main(){
     }
     console.log('built', L.code);
   }
-  if(!only) emitSitemap();
+  if(!only){ emitSitemap(); fs.writeFileSync(path.join(ROOT,'tagline.js'), TAGLINE_SRC); }
   console.log('done:', n, 'files');
 }
 main();
