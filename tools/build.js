@@ -1016,6 +1016,7 @@ ${code!=='en'?`<div class="mtbar">${t['chrome.mtnote']}</div>`:''}
 ${r.body}
 </main>
 ${footer(t,code,'full',pageKey)}
+${r.scripts||''}
 <script>${NAV_JS}</script>
 
 </body>
