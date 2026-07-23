@@ -17,8 +17,13 @@
    ============================================================================ */
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const ROOT = path.resolve(__dirname, '..');
 const A = f => fs.readFileSync(path.join(__dirname, 'assets', f), 'utf8');
+// content-hash the stylesheets so a CSS change busts any CDN/browser cache
+const cssVer = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT, f))).digest('hex').slice(0, 8);
+const V_ALT = cssVer('alt.css');
+const V_SITE = cssVer('site.css');
 
 const WORDMARK = A('wordmark.svg');
 const HEXUNIT = A('hexunit.svg');
@@ -969,7 +974,7 @@ ${d.slides}
 <meta name="description" content="${pageDesc(t,pageKey)}">
 <link rel="canonical" href="${url(code,'full',pageKey)}">
 ${hreflangs('full',pageKey)}
-<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/site.css?v=${V_SITE}">
 </head>
 <body>
 ${fullNav(t,code,pageKey)}
@@ -1003,7 +1008,7 @@ function shellAlt(code, variant, pageKey){
 <meta name="description" content="${pageDesc(t,pageKey)}">
 <link rel="canonical" href="${url('en','full',pageKey)}">
 ${hreflangs(variant,pageKey)}
-<link rel="stylesheet" href="/alt.css">
+<link rel="stylesheet" href="/alt.css?v=${V_ALT}">
 </head>
 <body>
 <header class="topbar">
