@@ -300,6 +300,9 @@ p + p{margin-top:1em}
 .esh ::selection{background:var(--ink);color:var(--bone)}
 
 /* ---------- contact ---------- */
+/* the contact section is single-column full width, so let its lead fill the
+   section (which is already responsive) instead of the 56ch reading measure */
+.contact .lead{max-width:none}
 .contact .bigmail{
   display:block;margin-top:26px;padding:26px 18px;
   border:var(--rule);text-align:center;text-decoration:none;
