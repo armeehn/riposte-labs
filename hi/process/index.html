@@ -24,18 +24,18 @@
 <link rel="alternate" hreflang="ar" href="/ar/process/">
 <link rel="alternate" hreflang="fa" href="/fa/process/">
 <link rel="alternate" hreflang="x-default" href="/process/">
-<link rel="stylesheet" href="/site.css?v=61ac3f05">
+<link rel="stylesheet" href="/site.css?v=8e17589d">
 </head>
 <body>
 <header class="topbar">
   <a class="brand" href="/hi/"><div class="mark"><img src="/logo.svg" alt="Riposte Laboratories" width="110"></div><span>Laboratories&nbsp;Inc.</span></a>
   <nav class="mainnav">
-    <div class="navgroup"><button class="navtop" type="button">कंपनी <span class="car">▾</span></button>
-      <div class="navmenu"><a href="/hi/#mission">मिशन <span class="ar">→</span></a><a href="/hi/#esh">esh से मिलिए <span class="ar">→</span></a><a href="/hi/#contact">संपर्क <span class="ar">→</span></a></div></div>
-    <div class="navgroup"><button class="navtop" type="button">परियोजनाएँ <span class="car">▾</span></button>
-      <div class="navmenu"><a href="/hi/#plastics">Plastic Works <span class="ar">→</span></a><a href="/hi/#hex">Project HEX <span class="ar">→</span></a></div></div>
-    <div class="navgroup"><button class="navtop" type="button">प्रक्रिया <span class="car">▾</span></button>
-      <div class="navmenu"><a href="/hi/process/">हमारी प्रक्रिया <span class="ar">→</span></a><a href="/hi/recycling101/">Recycling 101 <span class="ar">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-company">कंपनी <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-company"><a href="/hi/#mission">मिशन <span class="ar" aria-hidden="true">→</span></a><a href="/hi/#esh">esh से मिलिए <span class="ar" aria-hidden="true">→</span></a><a href="/hi/#contact">संपर्क <span class="ar" aria-hidden="true">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-projects">परियोजनाएँ <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-projects"><a href="/hi/#plastics">Plastic Works <span class="ar" aria-hidden="true">→</span></a><a href="/hi/#hex">Project HEX <span class="ar" aria-hidden="true">→</span></a></div></div>
+    <div class="navgroup"><button class="navtop" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="navmenu-process">प्रक्रिया <span class="car" aria-hidden="true">▾</span></button>
+      <div class="navmenu" id="navmenu-process"><a href="/hi/process/">हमारी प्रक्रिया <span class="ar" aria-hidden="true">→</span></a><a href="/hi/recycling101/">Recycling 101 <span class="ar" aria-hidden="true">→</span></a></div></div>
     <details class="navpick"><summary>संस्करण <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu"><a href="/hi/process/" aria-current="true">पूर्ण</a><a href="/hi/mobile/process/">मोबाइल</a><a href="/hi/lite/process/">लाइट</a><a href="/hi/eink/process/">E-ink</a></div></details>
     <details class="navpick lang"><summary><span class="globe" aria-hidden="true">🌐</span> हिन्दी <span class="car" aria-hidden="true">▾</span></summary><div class="navmenu langgrid"><a href="/process/" hreflang="en" lang="en"><span class="endo">English</span><span class="en">English</span></a><a href="/fr/process/" hreflang="fr" lang="fr"><span class="endo">Français</span><span class="en">French</span></a><a href="/es/process/" hreflang="es" lang="es"><span class="endo">Español</span><span class="en">Spanish</span></a><a href="/it/process/" hreflang="it" lang="it"><span class="endo">Italiano</span><span class="en">Italian</span></a><a href="/pl/process/" hreflang="pl" lang="pl"><span class="endo">Polski</span><span class="en">Polish</span></a><a href="/zh-hans/process/" hreflang="zh-Hans" lang="zh-Hans"><span class="endo">简体中文</span><span class="en">Chinese (Simplified)</span></a><a href="/zh-hant/process/" hreflang="zh-Hant" lang="zh-Hant"><span class="endo">繁體中文</span><span class="en">Chinese (Traditional)</span></a><a href="/pa/process/" hreflang="pa" lang="pa"><span class="endo">ਪੰਜਾਬੀ</span><span class="en">Punjabi</span></a><a href="/ko/process/" hreflang="ko" lang="ko"><span class="endo">한국어</span><span class="en">Korean</span></a><a href="/ja/process/" hreflang="ja" lang="ja"><span class="endo">日本語</span><span class="en">Japanese</span></a><a href="/tl/process/" hreflang="tl" lang="tl"><span class="endo">Tagalog</span><span class="en">Tagalog</span></a><a href="/vi/process/" hreflang="vi" lang="vi"><span class="endo">Tiếng Việt</span><span class="en">Vietnamese</span></a><a href="/hi/process/" hreflang="hi" lang="hi" aria-current="true"><span class="endo">हिन्दी</span><span class="en">Hindi</span></a><a href="/ar/process/" hreflang="ar" lang="ar" dir="rtl"><span class="endo">العربية</span><span class="en">Arabic</span></a><a href="/fa/process/" hreflang="fa" lang="fa" dir="rtl"><span class="endo">فارسی</span><span class="en">Farsi</span></a></div></details>
   </nav>
@@ -108,6 +108,20 @@
   <div class="l">&copy; 2026 Riposte Laboratories Inc. &#183; सर्वाधिकार सुरक्षित।</div>
   <div class="r">parry &#9851; riposte &#9851; recycle &#9851; repeat</div>
 </footer>
+<script>(function(){
+  var groups=document.querySelectorAll('.mainnav .navgroup');
+  Array.prototype.forEach.call(groups,function(g){
+    var btn=g.querySelector('.navtop'), menu=g.querySelector('.navmenu');
+    if(!btn||!menu)return;
+    function set(open){ btn.setAttribute('aria-expanded',open?'true':'false'); g.classList.toggle('open',open); }
+    btn.addEventListener('click',function(){ set(btn.getAttribute('aria-expanded')!=='true'); });
+    g.addEventListener('focusin',function(){ set(true); });
+    g.addEventListener('focusout',function(e){ if(!g.contains(e.relatedTarget)) set(false); });
+    g.addEventListener('mouseenter',function(){ set(true); });
+    g.addEventListener('mouseleave',function(){ if(!g.contains(document.activeElement)) set(false); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Escape'){ set(false); btn.focus(); } });
+  });
+})();</script>
 
 </body>
 </html>
